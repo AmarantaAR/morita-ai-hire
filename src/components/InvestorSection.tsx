@@ -30,7 +30,7 @@ export const InvestorSection = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden berry-texture">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -74,7 +74,7 @@ export const InvestorSection = () => {
         </div>
 
         {/* Why Invest Section */}
-        <div className="bg-gradient-dark rounded-3xl p-8 sm:p-12 animate-scale-in">
+        <div className="bg-gradient-dark rounded-3xl p-8 sm:p-12 animate-scale-in berry-dots">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold mb-8 text-center text-primary-foreground">
               Why Invest in Morita-hr?

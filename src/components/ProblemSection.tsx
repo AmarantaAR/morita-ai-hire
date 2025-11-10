@@ -25,7 +25,7 @@ export const ProblemSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-muted/30 berry-texture">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
@@ -56,7 +56,7 @@ export const ProblemSection = () => {
           })}
         </div>
 
-        <div className="mt-16 bg-gradient-dark rounded-2xl p-8 sm:p-12 text-center">
+        <div className="mt-16 bg-gradient-dark rounded-2xl p-8 sm:p-12 text-center berry-dots">
           <p className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
             Average time-to-hire: <span className="text-accent">42 days</span>
           </p>
