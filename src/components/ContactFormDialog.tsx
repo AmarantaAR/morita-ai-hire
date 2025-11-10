@@ -13,24 +13,21 @@ const contactSchema = z.object({
   email: z.string().trim().email("Please enter a valid email address").max(255, "Email must be less than 255 characters"),
   company: z.string().trim().max(100, "Company name must be less than 100 characters").optional(),
   role: z.string().trim().max(100, "Role must be less than 100 characters").optional(),
-  type: z.enum(["early-access", "investor"]),
   message: z.string().trim().max(1000, "Message must be less than 1000 characters").optional(),
 });
 
 interface ContactFormDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  defaultType?: "early-access" | "investor";
 }
 
-export const ContactFormDialog = ({ open, onOpenChange, defaultType = "early-access" }: ContactFormDialogProps) => {
+export const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
     role: "",
-    type: defaultType,
     message: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -96,7 +93,6 @@ export const ContactFormDialog = ({ open, onOpenChange, defaultType = "early-acc
           email: "",
           company: "",
           role: "",
-          type: defaultType,
           message: "",
         });
         setErrors({});
@@ -130,21 +126,19 @@ export const ContactFormDialog = ({ open, onOpenChange, defaultType = "early-acc
           <DialogTitle className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
             {step === 1 && "Let's Get Started"}
             {step === 2 && "Tell Us About You"}
-            {step === 3 && "What Brings You Here?"}
-            {step === 4 && "Almost Done!"}
+            {step === 3 && "Almost Done!"}
           </DialogTitle>
           <DialogDescription>
             {step === 1 && "We're excited to connect with you"}
             {step === 2 && "Help us understand your needs better"}
-            {step === 3 && "Choose your interest"}
-            {step === 4 && "Any additional information?"}
+            {step === 3 && "Any additional information?"}
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-6 py-4">
           {/* Progress indicator */}
           <div className="flex gap-2">
-            {[1, 2, 3, 4].map((i) => (
+            {[1, 2, 3].map((i) => (
               <div
                 key={i}
                 className={`h-1 flex-1 rounded-full transition-all ${
@@ -217,44 +211,8 @@ export const ContactFormDialog = ({ open, onOpenChange, defaultType = "early-acc
             </div>
           )}
 
-          {/* Step 3: Interest Type */}
+          {/* Step 3: Message */}
           {step === 3 && (
-            <div className="space-y-4 animate-fade-in">
-              <div className="grid grid-cols-2 gap-3">
-                <button
-                  onClick={() => handleChange("type", "early-access")}
-                  className={`p-6 rounded-xl border-2 transition-all hover:scale-105 ${
-                    formData.type === "early-access"
-                      ? "border-primary bg-primary/10 shadow-[0_0_30px_hsl(var(--primary)_/_0.3)]"
-                      : "border-border bg-card hover:border-primary/50"
-                  }`}
-                >
-                  <div className="text-center space-y-2">
-                    <div className="text-3xl">🚀</div>
-                    <div className="font-semibold">Early Access</div>
-                    <div className="text-xs text-muted-foreground">Transform your hiring</div>
-                  </div>
-                </button>
-                <button
-                  onClick={() => handleChange("type", "investor")}
-                  className={`p-6 rounded-xl border-2 transition-all hover:scale-105 ${
-                    formData.type === "investor"
-                      ? "border-accent bg-accent/10 shadow-[0_0_30px_hsl(var(--accent)_/_0.3)]"
-                      : "border-border bg-card hover:border-accent/50"
-                  }`}
-                >
-                  <div className="text-center space-y-2">
-                    <div className="text-3xl">💼</div>
-                    <div className="font-semibold">Investor</div>
-                    <div className="text-xs text-muted-foreground">Join the revolution</div>
-                  </div>
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Step 4: Message */}
-          {step === 4 && (
             <div className="space-y-4 animate-fade-in">
               <div className="space-y-2">
                 <Label htmlFor="message">Message (Optional)</Label>
@@ -281,7 +239,7 @@ export const ContactFormDialog = ({ open, onOpenChange, defaultType = "early-acc
                 Back
               </Button>
             )}
-            {step < 4 ? (
+            {step < 3 ? (
               <Button
                 variant="hero"
                 onClick={handleNext}

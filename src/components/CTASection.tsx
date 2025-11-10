@@ -5,7 +5,6 @@ import { ContactFormDialog } from "@/components/ContactFormDialog";
 
 export const CTASection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [dialogType, setDialogType] = useState<"early-access" | "investor">("early-access");
 
   return (
     <section className="py-20 relative overflow-hidden">
@@ -20,13 +19,12 @@ export const CTASection = () => {
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-[1.1] tracking-tight">
-              Let's Build the Future of Hiring —{" "}
+              Ready to Transform Your Hiring —{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">Today</span>
             </h2>
             
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-              Whether you're ready to transform your recruitment process or interested in investing in 
-              the future of HR tech, we'd love to hear from you.
+              Join forward-thinking companies that are revolutionizing their recruitment process with AI-powered intelligence.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
@@ -34,31 +32,16 @@ export const CTASection = () => {
                 variant="hero" 
                 size="lg" 
                 className="group shadow-[0_0_60px_hsl(var(--primary)_/_0.4)]"
-                onClick={() => {
-                  setDialogType("early-access");
-                  setDialogOpen(true);
-                }}
+                onClick={() => setDialogOpen(true)}
               >
                 Request Demo
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="shadow-[0_0_40px_hsl(var(--primary)_/_0.2)]"
-                onClick={() => {
-                  setDialogType("investor");
-                  setDialogOpen(true);
-                }}
-              >
-                I'm an Investor
               </Button>
             </div>
 
             <ContactFormDialog 
               open={dialogOpen} 
               onOpenChange={setDialogOpen}
-              defaultType={dialogType}
             />
 
             {/* Trust indicators */}

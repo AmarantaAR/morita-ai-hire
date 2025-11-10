@@ -7,7 +7,6 @@ import { ContactFormDialog } from "@/components/ContactFormDialog";
 
 export const HeroSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [dialogType, setDialogType] = useState<"early-access" | "investor">("early-access");
   const costReduction = useCounter({ end: 70, isPercentage: true, duration: 2500 });
   const fasterHiring = useCounter({ end: 5, suffix: "x", duration: 2500 });
   const lessBias = useCounter({ end: 40, isPercentage: true, duration: 2500 });
@@ -58,33 +57,18 @@ export const HeroSection = () => {
                   variant="hero" 
                   size="xl" 
                   className="group w-full sm:w-auto"
-                  onClick={() => {
-                    setDialogType("early-access");
-                    setDialogOpen(true);
-                  }}
+                  onClick={() => setDialogOpen(true)}
                 >
                   Request Early Access
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <span className="text-xs text-muted-foreground mt-2">No spam, just smarter hiring</span>
               </div>
-              <Button 
-                variant="outline" 
-                size="xl" 
-                className="w-full sm:w-auto"
-                onClick={() => {
-                  setDialogType("investor");
-                  setDialogOpen(true);
-                }}
-              >
-                For Investors
-              </Button>
             </div>
 
             <ContactFormDialog 
               open={dialogOpen} 
               onOpenChange={setDialogOpen}
-              defaultType={dialogType}
             />
             
             <div className="mt-12 flex items-center gap-8 justify-center lg:justify-start text-sm">
