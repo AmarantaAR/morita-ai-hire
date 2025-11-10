@@ -63,18 +63,18 @@ export const FeaturesSection = () => {
     <section className="py-20 bg-[#0B0A10] text-white relative overflow-hidden">
       {/* Animated background decoration */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#6B4EFF] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#00F5A0] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#6B4EFF] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '2s' }} />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#00F5A0] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '2.5s', animationDelay: '0.5s' }} />
       </div>
 
       {/* Animated gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#6B4EFF]/5 via-transparent to-[#00F5A0]/5 animate-pulse" style={{ animationDuration: '8s' }} />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#6B4EFF]/5 via-transparent to-[#00F5A0]/5 animate-pulse" style={{ animationDuration: '3s' }} />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl font-bold mb-3 leading-tight text-white">
             Powerful Features for{" "}
-            <span className="bg-gradient-to-r from-[#00F5A0] to-[#A28CFF] bg-clip-text text-transparent animate-pulse" style={{ animationDuration: '3s' }}>Modern Hiring</span>
+            <span className="bg-gradient-to-r from-[#00F5A0] to-[#A28CFF] bg-clip-text text-transparent animate-pulse" style={{ animationDuration: '1.5s' }}>Modern Hiring</span>
           </h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
             Everything you need to revolutionize your recruitment process, powered by cutting-edge AI technology.
@@ -98,24 +98,24 @@ export const FeaturesSection = () => {
               <div
                 key={index}
                 ref={(el) => (itemRefs.current[index] = el)}
-                className={`group bg-white/5 backdrop-blur-sm border ${colorScheme.border} rounded-xl p-5 hover:bg-white/10 hover:border-opacity-60 hover:-translate-x-1 transition-all duration-500 cursor-pointer ${
+                className={`group bg-white/5 backdrop-blur-sm border ${colorScheme.border} rounded-xl p-5 hover:bg-white/10 hover:border-opacity-60 hover:-translate-x-1 transition-all duration-200 cursor-pointer ${
                   visibleItems.has(index) 
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-8'
                 }`}
                 style={{ 
-                  transitionDelay: visibleItems.has(index) ? `${index * 0.1}s` : '0s'
+                  transitionDelay: visibleItems.has(index) ? `${index * 0.05}s` : '0s'
                 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`w-12 h-12 ${colorScheme.bg} rounded-xl flex items-center justify-center flex-shrink-0 ${colorScheme.glow} transition-all duration-300 group-hover:scale-125 group-hover:rotate-3 border ${colorScheme.border}`}>
-                    <Icon className={`w-6 h-6 ${colorScheme.icon} group-hover:drop-shadow-[0_0_8px_currentColor] transition-all`} strokeWidth={2.5} />
+                  <div className={`w-12 h-12 ${colorScheme.bg} rounded-xl flex items-center justify-center flex-shrink-0 ${colorScheme.glow} transition-all duration-150 group-hover:scale-125 group-hover:rotate-3 border ${colorScheme.border}`}>
+                    <Icon className={`w-6 h-6 ${colorScheme.icon} group-hover:drop-shadow-[0_0_8px_currentColor] transition-all duration-150`} strokeWidth={2.5} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-semibold mb-1.5 text-white group-hover:text-[#00F5A0] transition-colors">{feature.title}</h3>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors">{feature.description}</p>
+                    <h3 className="text-base font-semibold mb-1.5 text-white group-hover:text-[#00F5A0] transition-colors duration-150">{feature.title}</h3>
+                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-150">{feature.description}</p>
                   </div>
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-150">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#00F5A0] animate-pulse" />
                   </div>
                 </div>
