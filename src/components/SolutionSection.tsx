@@ -45,9 +45,9 @@ export const SolutionSection = () => {
             const Icon = step.icon;
             return (
               <div key={index} className="relative animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                {/* Connector line with organic gradient */}
+                {/* Connector line with gradient animation */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary via-secondary to-accent-natural -z-10 opacity-40" />
+                  <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary via-secondary to-accent -z-10 opacity-50" />
                 )}
                 
                 <div className="bg-card/80 backdrop-blur-sm p-6 rounded-xl border border-primary/20 hover:border-primary/40 hover:shadow-[var(--shadow-glow)] hover:-translate-y-1 h-full group transition-all">
@@ -90,24 +90,24 @@ export const SolutionSection = () => {
             </div>
           </div>
 
-          <div className="bg-card/80 backdrop-blur-sm p-7 rounded-2xl border border-accent-warm/30 hover:bg-card hover:shadow-[var(--shadow-warm)] hover:border-accent-warm/60 hover:scale-[1.02] transition-all duration-300 animate-scale-in group" style={{ animationDelay: "0.2s" }}>
+          <div className="bg-card/80 backdrop-blur-sm p-7 rounded-xl border border-accent/30 hover:bg-card hover:shadow-[0_0_50px_hsl(var(--accent)_/_0.5)] hover:border-accent/60 hover:scale-[1.02] transition-all duration-300 animate-scale-in group" style={{ animationDelay: "0.2s" }}>
             <div className="flex items-start gap-3">
-              <div className="w-11 h-11 bg-accent-warm/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-accent-warm/30 group-hover:bg-accent-warm/20 group-hover:border-accent-warm/50 transition-all duration-300">
-                <BarChart3 className="w-5 h-5 text-accent-warm group-hover:scale-110 transition-all duration-300" />
+              <div className="w-11 h-11 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-accent/30 group-hover:bg-accent/30 group-hover:border-accent/50 group-hover:shadow-[0_0_20px_hsl(var(--accent)_/_0.4)] transition-all duration-300">
+                <BarChart3 className="w-5 h-5 text-accent group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_hsl(var(--accent))] transition-all duration-300" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-accent-warm transition-colors duration-300">For Recruiters</h3>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">For Recruiters</h3>
                 <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300 font-sans">
-                    <CheckCircle className="w-4 h-4 text-accent-warm flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
+                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300">
+                    <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
                     <span>Comprehensive dashboard with ranked candidates</span>
                   </li>
-                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300 font-sans">
-                    <CheckCircle className="w-4 h-4 text-accent-warm flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
+                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300">
+                    <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
                     <span>Detailed interview summaries and insights</span>
                   </li>
-                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300 font-sans">
-                    <CheckCircle className="w-4 h-4 text-accent-warm flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
+                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300">
+                    <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
                     <span>Seamless integration with existing ATS systems</span>
                   </li>
                 </ul>

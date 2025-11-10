@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'recoleta': ['Fraunces', 'serif'],
+        'clash': ['"Clash Display"', 'sans-serif'],
         'sans': ['Manrope', 'sans-serif'],
       },
       colors: {
@@ -31,8 +31,6 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
-        'accent-warm': "hsl(var(--accent-warm))",
-        'accent-natural': "hsl(var(--accent-natural))",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -42,7 +40,7 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent-warm))",
+          DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
@@ -142,8 +140,6 @@ export default {
         "gradient-primary": "var(--gradient-primary)",
         "gradient-hero": "var(--gradient-hero)",
         "gradient-dark": "var(--gradient-dark)",
-        "gradient-soft": "var(--gradient-soft)",
-        "gradient-card": "var(--gradient-card)",
       },
     },
   },

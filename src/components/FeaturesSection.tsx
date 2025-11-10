@@ -60,42 +60,37 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden berry-dots">
-      {/* Soft organic background decoration */}
-      <div className="absolute inset-0 opacity-6">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/8 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-accent-warm/6 rounded-[40%_60%_70%_30%/40%_60%_30%_70%] blur-3xl animate-pulse" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }} />
+    <section className="py-20 bg-[#0B0A10] text-white relative overflow-hidden">
+      {/* Animated background decoration */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#6B4EFF] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '2s' }} />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#00F5A0] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '2.5s', animationDelay: '0.5s' }} />
       </div>
 
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary/3 via-transparent to-accent-natural/3 animate-pulse" style={{ animationDuration: '4s' }} />
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#6B4EFF]/5 via-transparent to-[#00F5A0]/5 animate-pulse" style={{ animationDuration: '3s' }} />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight">
+        <div className="text-center mb-12 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 leading-tight text-white">
             Powerful Features for{" "}
-            <span className="relative inline-block">
-              <span className="bg-gradient-primary bg-clip-text text-transparent">Modern Hiring</span>
-              <svg className="absolute -bottom-1 left-0 w-full h-2 opacity-30" viewBox="0 0 300 8" preserveAspectRatio="none">
-                <path d="M0,6 Q75,1 150,5 T300,6" fill="none" stroke="hsl(var(--accent-natural))" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            </span>
+            <span className="bg-gradient-to-r from-[#00F5A0] to-[#A28CFF] bg-clip-text text-transparent animate-pulse" style={{ animationDuration: '1.5s' }}>Modern Hiring</span>
           </h2>
-          <p className="text-lg text-foreground/60 max-w-2xl mx-auto font-sans">
-            Everything you need to revolutionize your recruitment process, powered by cutting-edge AI with a human touch.
+          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            Everything you need to revolutionize your recruitment process, powered by cutting-edge AI technology.
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto space-y-4">
+        <div className="max-w-4xl mx-auto space-y-3">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const colors = [
-              { bg: "bg-primary/8", icon: "text-primary", glow: "group-hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.25)]", border: "border-primary/20", accent: "bg-primary" },
-              { bg: "bg-secondary/8", icon: "text-secondary", glow: "group-hover:shadow-[0_0_30px_hsl(var(--secondary)_/_0.25)]", border: "border-secondary/20", accent: "bg-secondary" },
-              { bg: "bg-accent-warm/8", icon: "text-accent-warm", glow: "group-hover:shadow-[0_0_30px_hsl(var(--accent-warm)_/_0.25)]", border: "border-accent-warm/20", accent: "bg-accent-warm" },
-              { bg: "bg-accent-natural/8", icon: "text-accent-natural", glow: "group-hover:shadow-[0_0_30px_hsl(var(--accent-natural)_/_0.25)]", border: "border-accent-natural/20", accent: "bg-accent-natural" },
-              { bg: "bg-primary/8", icon: "text-primary", glow: "group-hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.25)]", border: "border-primary/20", accent: "bg-primary" },
-              { bg: "bg-secondary/8", icon: "text-secondary", glow: "group-hover:shadow-[0_0_30px_hsl(var(--secondary)_/_0.25)]", border: "border-secondary/20", accent: "bg-secondary" },
+              { bg: "bg-[#6B4EFF]/10", icon: "text-[#6B4EFF]", glow: "group-hover:shadow-[0_0_30px_rgba(107,78,255,0.5)]", border: "border-[#6B4EFF]/30" },
+              { bg: "bg-[#00F5A0]/10", icon: "text-[#00F5A0]", glow: "group-hover:shadow-[0_0_30px_rgba(0,245,160,0.5)]", border: "border-[#00F5A0]/30" },
+              { bg: "bg-[#A28CFF]/10", icon: "text-[#A28CFF]", glow: "group-hover:shadow-[0_0_30px_rgba(162,140,255,0.5)]", border: "border-[#A28CFF]/30" },
+              { bg: "bg-[#6B4EFF]/10", icon: "text-[#6B4EFF]", glow: "group-hover:shadow-[0_0_30px_rgba(107,78,255,0.5)]", border: "border-[#6B4EFF]/30" },
+              { bg: "bg-[#00F5A0]/10", icon: "text-[#00F5A0]", glow: "group-hover:shadow-[0_0_30px_rgba(0,245,160,0.5)]", border: "border-[#00F5A0]/30" },
+              { bg: "bg-[#A28CFF]/10", icon: "text-[#A28CFF]", glow: "group-hover:shadow-[0_0_30px_rgba(162,140,255,0.5)]", border: "border-[#A28CFF]/30" },
             ];
             const colorScheme = colors[index % colors.length];
             
@@ -103,26 +98,25 @@ export const FeaturesSection = () => {
               <div
                 key={index}
                 ref={(el) => (itemRefs.current[index] = el)}
-                className={`group bg-gradient-card backdrop-blur-sm border ${colorScheme.border} rounded-2xl p-6 hover:bg-card/40 hover:border-opacity-70 hover:-translate-y-1 transition-all duration-300 cursor-pointer ${colorScheme.glow} ${
+                className={`group bg-white/5 backdrop-blur-sm border ${colorScheme.border} rounded-xl p-5 hover:bg-white/10 hover:border-opacity-60 hover:-translate-x-1 transition-all duration-200 cursor-pointer ${
                   visibleItems.has(index) 
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-8'
                 }`}
                 style={{ 
-                  transitionDelay: visibleItems.has(index) ? `${index * 0.08}s` : '0s'
+                  transitionDelay: visibleItems.has(index) ? `${index * 0.05}s` : '0s'
                 }}
               >
-                <div className="flex items-start gap-5">
-                  <div className={`relative w-14 h-14 ${colorScheme.bg} rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 border ${colorScheme.border}`}>
-                    <Icon className={`w-7 h-7 ${colorScheme.icon} transition-all duration-300`} strokeWidth={2} />
-                    <div className={`absolute inset-0 ${colorScheme.accent} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`} />
+                <div className="flex items-start gap-4">
+                  <div className={`w-12 h-12 ${colorScheme.bg} rounded-xl flex items-center justify-center flex-shrink-0 ${colorScheme.glow} transition-all duration-150 group-hover:scale-125 group-hover:rotate-3 border ${colorScheme.border}`}>
+                    <Icon className={`w-6 h-6 ${colorScheme.icon} group-hover:drop-shadow-[0_0_8px_currentColor] transition-all duration-150`} strokeWidth={2.5} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className={`text-lg font-semibold mb-2 ${colorScheme.icon} transition-colors duration-300`}>{feature.title}</h3>
-                    <p className="text-foreground/60 text-sm leading-relaxed group-hover:text-foreground/80 transition-colors duration-300 font-sans">{feature.description}</p>
+                    <h3 className="text-base font-semibold mb-1.5 text-white group-hover:text-[#00F5A0] transition-colors duration-150">{feature.title}</h3>
+                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-150">{feature.description}</p>
                   </div>
-                  <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 mt-2">
-                    <div className={`w-2 h-2 rounded-full ${colorScheme.accent} animate-pulse`} />
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#00F5A0] animate-pulse" />
                   </div>
                 </div>
               </div>
