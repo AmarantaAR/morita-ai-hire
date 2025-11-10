@@ -53,32 +53,33 @@ export const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="max-w-4xl mx-auto space-y-3">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const colors = [
-              { bg: "from-primary/15 to-primary/5", icon: "bg-white text-primary", border: "border-primary/30", glow: "hover:shadow-[0_10px_50px_hsl(var(--primary)_/_0.3)]" },
-              { bg: "from-accent/15 to-accent/5", icon: "bg-white text-accent", border: "border-accent/30", glow: "hover:shadow-[0_10px_50px_hsl(var(--accent)_/_0.3)]" },
-              { bg: "from-secondary/15 to-secondary/5", icon: "bg-white text-secondary", border: "border-secondary/30", glow: "hover:shadow-[0_10px_50px_hsl(var(--secondary)_/_0.3)]" },
-              { bg: "from-primary/15 to-accent/5", icon: "bg-white text-primary", border: "border-primary/30", glow: "hover:shadow-[0_10px_50px_hsl(var(--primary)_/_0.3)]" },
-              { bg: "from-accent/15 to-secondary/5", icon: "bg-white text-accent", border: "border-accent/30", glow: "hover:shadow-[0_10px_50px_hsl(var(--accent)_/_0.3)]" },
-              { bg: "from-secondary/15 to-primary/5", icon: "bg-white text-secondary", border: "border-secondary/30", glow: "hover:shadow-[0_10px_50px_hsl(var(--secondary)_/_0.3)]" },
+              { icon: "text-primary", glow: "group-hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.4)]" },
+              { icon: "text-accent", glow: "group-hover:shadow-[0_0_20px_hsl(var(--accent)_/_0.4)]" },
+              { icon: "text-secondary", glow: "group-hover:shadow-[0_0_20px_hsl(var(--secondary)_/_0.4)]" },
+              { icon: "text-primary", glow: "group-hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.4)]" },
+              { icon: "text-accent", glow: "group-hover:shadow-[0_0_20px_hsl(var(--accent)_/_0.4)]" },
+              { icon: "text-secondary", glow: "group-hover:shadow-[0_0_20px_hsl(var(--secondary)_/_0.4)]" },
             ];
             const colorScheme = colors[index % colors.length];
             
             return (
               <div
                 key={index}
-                className={`group bg-gradient-to-br ${colorScheme.bg} backdrop-blur-lg p-6 rounded-xl border ${colorScheme.border} hover:scale-[1.01] ${colorScheme.glow} hover:bg-opacity-30 transition-all duration-300 hover:-translate-y-0.5 animate-slide-up relative overflow-hidden`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group bg-card/40 backdrop-blur-sm border border-border/50 rounded-lg p-5 hover:bg-card/60 hover:border-primary/40 transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative z-10">
-                  <div className={`w-12 h-12 ${colorScheme.icon} rounded-xl flex items-center justify-center mb-4 group-hover:scale-125 group-hover:shadow-2xl group-hover:brightness-125 transition-all duration-300 shadow-lg`}>
-                    <Icon className="w-6 h-6" strokeWidth={2} />
+                <div className="flex items-start gap-4">
+                  <div className={`w-11 h-11 bg-background/80 rounded-lg flex items-center justify-center flex-shrink-0 ${colorScheme.glow} transition-all duration-300 group-hover:scale-110`}>
+                    <Icon className={`w-5 h-5 ${colorScheme.icon} group-hover:brightness-125 transition-all`} strokeWidth={2} />
                   </div>
-                  <h3 className="text-base font-bold mb-2 text-accent">{feature.title}</h3>
-                  <p className="text-white/80 text-sm">{feature.description}</p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold mb-1.5 text-foreground">{feature.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+                  </div>
                 </div>
               </div>
             );
