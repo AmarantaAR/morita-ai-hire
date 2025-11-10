@@ -3,13 +3,13 @@ import berryLogo from "@/assets/morita-berry-logo.png";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-dark text-primary-foreground py-12">
+    <footer className="bg-gradient-dark text-primary-foreground py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-6 mb-6">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-1 mb-4 group cursor-pointer">
-              <span className="text-2xl font-clash font-bold lowercase tracking-wide text-foreground group-hover:text-primary transition-colors">
+            <div className="flex items-center gap-1 mb-3 group cursor-pointer">
+              <span className="text-xl font-clash font-bold lowercase tracking-wide text-foreground group-hover:text-primary transition-colors">
                 mor
                 <span className="relative inline-block">
                   i
@@ -17,38 +17,38 @@ export const Footer = () => {
                 </span>
                 ta
               </span>
-              <span className="text-lg font-sans text-muted-foreground ml-0.5">.hr</span>
+              <span className="text-base font-sans text-muted-foreground ml-0.5">.hr</span>
             </div>
-            <p className="text-muted-foreground mb-6 max-w-sm leading-relaxed">
+            <p className="text-muted-foreground mb-5 max-w-sm text-sm">
               Revolutionizing human resources with AI-powered intelligent recruiting. 
               The future of hiring is here.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5">
               <a
                 href="#"
-                className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-1 hover:shadow-[var(--shadow-glow)] transition-all border border-primary/20"
+                className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)] transition-all border border-primary/20"
               >
-                <Linkedin className="w-5 h-5 text-primary" />
+                <Linkedin className="w-4 h-4 text-primary" />
               </a>
               <a
                 href="#"
-                className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-1 hover:shadow-[var(--shadow-glow)] transition-all border border-primary/20"
+                className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)] transition-all border border-primary/20"
               >
-                <Twitter className="w-5 h-5 text-primary" />
+                <Twitter className="w-4 h-4 text-primary" />
               </a>
               <a
                 href="#"
-                className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-1 hover:shadow-[var(--shadow-glow)] transition-all border border-primary/20"
+                className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)] transition-all border border-primary/20"
               >
-                <Mail className="w-5 h-5 text-primary" />
+                <Mail className="w-4 h-4 text-primary" />
               </a>
             </div>
           </div>
 
           {/* Product */}
           <div>
-            <h3 className="font-semibold mb-4 text-card-foreground">Product</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold mb-3 text-card-foreground text-sm">Product</h3>
+            <ul className="space-y-1.5 text-xs">
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                   Features
@@ -74,8 +74,8 @@ export const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold mb-4 text-card-foreground">Company</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold mb-3 text-card-foreground text-sm">Company</h3>
+            <ul className="space-y-1.5 text-xs">
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                   About Us
@@ -101,10 +101,10 @@ export const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-primary/20">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+        <div className="pt-6 border-t border-primary/20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
             <p>© 2025 Morita. All rights reserved.</p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-5">
               <a href="#" className="hover:text-primary transition-colors">
                 Privacy Policy
               </a>

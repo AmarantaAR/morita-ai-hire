@@ -35,7 +35,7 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-dark text-primary-foreground relative overflow-hidden">
+    <section className="py-20 bg-gradient-dark text-primary-foreground relative overflow-hidden">
       {/* Background decoration - subtle */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary rounded-full blur-3xl" />
@@ -43,17 +43,17 @@ export const FeaturesSection = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight">
+        <div className="text-center mb-12 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 leading-tight">
             Powerful Features for{" "}
             <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Modern Hiring</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Everything you need to revolutionize your recruitment process, powered by cutting-edge AI technology.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const colors = [
@@ -69,16 +69,16 @@ export const FeaturesSection = () => {
             return (
               <div
                 key={index}
-                className={`group bg-gradient-to-br ${colorScheme.bg} backdrop-blur-lg p-7 rounded-2xl border ${colorScheme.border} hover:scale-[1.02] ${colorScheme.glow} hover:bg-opacity-30 transition-all duration-300 hover:-translate-y-1 animate-slide-up relative overflow-hidden`}
+                className={`group bg-gradient-to-br ${colorScheme.bg} backdrop-blur-lg p-6 rounded-xl border ${colorScheme.border} hover:scale-[1.01] ${colorScheme.glow} hover:bg-opacity-30 transition-all duration-300 hover:-translate-y-0.5 animate-slide-up relative overflow-hidden`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative z-10">
-                  <div className={`w-14 h-14 ${colorScheme.icon} rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg`}>
-                    <Icon className="w-7 h-7" strokeWidth={2} />
+                  <div className={`w-12 h-12 ${colorScheme.icon} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg`}>
+                    <Icon className="w-6 h-6" strokeWidth={2} />
                   </div>
-                  <h3 className="text-lg font-bold mb-3 text-accent">{feature.title}</h3>
-                  <p className="text-white/85 leading-relaxed text-sm">{feature.description}</p>
+                  <h3 className="text-base font-bold mb-2 text-accent">{feature.title}</h3>
+                  <p className="text-white/80 text-sm">{feature.description}</p>
                 </div>
               </div>
             );
