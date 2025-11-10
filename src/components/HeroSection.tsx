@@ -8,7 +8,7 @@ import { ContactFormDialog } from "@/components/ContactFormDialog";
 export const HeroSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const costReduction = useCounter({ end: 70, isPercentage: true, duration: 2500 });
-  const fasterHiring = useCounter({ end: 5, suffix: "x", duration: 2500 });
+  const fasterHiring = useCounter({ end: 10, suffix: "x", duration: 2500 });
   const lessBias = useCounter({ end: 40, isPercentage: true, duration: 2500 });
   const activeInterviews = useCounter({ end: 1247, duration: 3000 });
   const matchAccuracy = useCounter({ end: 94.8, isPercentage: true, duration: 3000 });
