@@ -74,7 +74,7 @@ export const FeaturesSection = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative z-10">
-                  <div className={`w-12 h-12 ${colorScheme.icon} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg`}>
+                  <div className={`w-12 h-12 ${colorScheme.icon} rounded-xl flex items-center justify-center mb-4 group-hover:scale-125 group-hover:shadow-2xl group-hover:brightness-125 transition-all duration-300 shadow-lg`}>
                     <Icon className="w-6 h-6" strokeWidth={2} />
                   </div>
                   <h3 className="text-base font-bold mb-2 text-accent">{feature.title}</h3>
