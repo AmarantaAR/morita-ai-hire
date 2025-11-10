@@ -1,6 +1,31 @@
 import { MessageSquare, Target, TrendingUp, Network, Shield, Workflow } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 export const FeaturesSection = () => {
+  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = itemRefs.current.findIndex((ref) => ref === entry.target);
+            if (index !== -1) {
+              setVisibleItems((prev) => new Set([...prev, index]));
+            }
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
   const features = [
     {
       icon: MessageSquare,
@@ -72,8 +97,15 @@ export const FeaturesSection = () => {
             return (
               <div
                 key={index}
-                className={`group bg-white/5 backdrop-blur-sm border ${colorScheme.border} rounded-xl p-5 hover:bg-white/10 hover:border-opacity-60 hover:-translate-x-1 transition-all duration-300 animate-fade-in cursor-pointer`}
-                style={{ animationDelay: `${index * 0.08}s` }}
+                ref={(el) => (itemRefs.current[index] = el)}
+                className={`group bg-white/5 backdrop-blur-sm border ${colorScheme.border} rounded-xl p-5 hover:bg-white/10 hover:border-opacity-60 hover:-translate-x-1 transition-all duration-500 cursor-pointer ${
+                  visibleItems.has(index) 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}
+                style={{ 
+                  transitionDelay: visibleItems.has(index) ? `${index * 0.1}s` : '0s'
+                }}
               >
                 <div className="flex items-start gap-4">
                   <div className={`w-12 h-12 ${colorScheme.bg} rounded-xl flex items-center justify-center flex-shrink-0 ${colorScheme.glow} transition-all duration-300 group-hover:scale-125 group-hover:rotate-3 border ${colorScheme.border}`}>
