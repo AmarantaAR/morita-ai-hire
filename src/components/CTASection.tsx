@@ -46,20 +46,6 @@ export const CTASection = () => {
 
             {/* Trust indicators */}
             <div className="flex flex-wrap items-center justify-center gap-5 text-xs text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary rounded-full" />
-                <span>SOC 2 Compliant</span>
-              </div>
-              <div className="w-px h-4 bg-border" />
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary rounded-full" />
-                <span>GDPR Ready</span>
-              </div>
-              <div className="w-px h-4 bg-border" />
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary rounded-full" />
-                <span>Enterprise Grade</span>
-              </div>
             </div>
           </div>
         </div>
