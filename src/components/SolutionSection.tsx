@@ -54,8 +54,8 @@ export const SolutionSection = () => {
                   <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 shadow-[var(--shadow-glow)] group-hover:scale-110 group-hover:rotate-6 transition-all">
                     <Icon className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <div className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Step {index + 1}</div>
-                  <h3 className="text-lg font-bold mb-2">{step.title}</h3>
+                  <div className="text-xs font-medium text-primary uppercase tracking-wider mb-2">Step {index + 1}</div>
+                  <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
                   <p className="text-sm text-muted-foreground">{step.description}</p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ export const SolutionSection = () => {
                 <Zap className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-3">For Candidates</h3>
+                <h3 className="text-xl font-semibold mb-3">For Candidates</h3>
                 <ul className="space-y-2.5">
                   <li className="flex items-start gap-2.5 text-sm">
                     <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
@@ -96,7 +96,7 @@ export const SolutionSection = () => {
                 <BarChart3 className="w-5 h-5 text-accent" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-3">For Recruiters</h3>
+                <h3 className="text-xl font-semibold mb-3">For Recruiters</h3>
                 <ul className="space-y-2.5">
                   <li className="flex items-start gap-2.5 text-sm">
                     <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />

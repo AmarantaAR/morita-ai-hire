@@ -80,7 +80,7 @@ export const FeaturesSection = () => {
                     <Icon className={`w-6 h-6 ${colorScheme.icon} group-hover:drop-shadow-[0_0_8px_currentColor] transition-all`} strokeWidth={2.5} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold mb-1.5 text-white group-hover:text-[#00F5A0] transition-colors">{feature.title}</h3>
+                    <h3 className="text-base font-semibold mb-1.5 text-white group-hover:text-[#00F5A0] transition-colors">{feature.title}</h3>
                     <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors">{feature.description}</p>
                   </div>
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">

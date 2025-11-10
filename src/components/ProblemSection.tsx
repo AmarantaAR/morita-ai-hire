@@ -52,7 +52,7 @@ export const ProblemSection = () => {
                 <div className="w-14 h-14 bg-destructive/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all border border-destructive/20">
                   <Icon className="w-7 h-7 text-destructive" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{problem.title}</h3>
+                <h3 className="text-xl font-semibold mb-3">{problem.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{problem.description}</p>
               </div>
             );

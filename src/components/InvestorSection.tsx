@@ -73,7 +73,7 @@ export const InvestorSection = () => {
                 <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform origin-left">
                   {metric.counter.count}
                 </div>
-                <div className="text-sm font-bold mb-1.5">{metric.label}</div>
+                <div className="text-sm font-semibold mb-1.5">{metric.label}</div>
                 <div className="text-xs text-muted-foreground">{metric.subtitle}</div>
               </div>
             );

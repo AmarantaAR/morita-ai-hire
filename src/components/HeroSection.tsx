@@ -63,17 +63,17 @@ export const HeroSection = () => {
             
             <div className="mt-12 flex items-center gap-8 justify-center lg:justify-start text-sm">
               <div ref={costReduction.ref}>
-                <div className="text-2xl font-bold text-primary">{costReduction.count}</div>
+                <div className="text-2xl font-semibold text-primary">{costReduction.count}</div>
                 <div className="text-muted-foreground">Cost Reduction</div>
               </div>
               <div className="w-px h-12 bg-border" />
               <div ref={fasterHiring.ref}>
-                <div className="text-2xl font-bold text-primary">{fasterHiring.count}</div>
+                <div className="text-2xl font-semibold text-primary">{fasterHiring.count}</div>
                 <div className="text-muted-foreground">Faster Hiring</div>
               </div>
               <div className="w-px h-12 bg-border" />
               <div ref={lessBias.ref}>
-                <div className="text-2xl font-bold text-primary">{lessBias.count}</div>
+                <div className="text-2xl font-semibold text-primary">{lessBias.count}</div>
                 <div className="text-muted-foreground">Less Bias</div>
               </div>
             </div>
@@ -93,12 +93,12 @@ export const HeroSection = () => {
             {/* Floating stats cards with glass-morphism */}
             <div ref={activeInterviews.ref} className="absolute -bottom-6 -left-6 bg-card/80 backdrop-blur-xl p-5 rounded-xl shadow-[var(--shadow-glow)] border border-primary/30 animate-float hover:scale-110 hover:border-primary/50 transition-all cursor-pointer" style={{ animationDelay: "0.3s" }}>
               <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Active Interviews</div>
-              <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">{activeInterviews.count}</div>
+              <div className="text-3xl font-semibold bg-gradient-primary bg-clip-text text-transparent">{activeInterviews.count}</div>
             </div>
             
             <div ref={matchAccuracy.ref} className="absolute -top-6 -right-6 bg-card/80 backdrop-blur-xl p-5 rounded-xl shadow-[var(--shadow-mint)] border border-accent/30 animate-float hover:scale-110 hover:border-accent/50 transition-all cursor-pointer" style={{ animationDelay: "0.8s" }}>
               <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Match Accuracy</div>
-              <div className="text-3xl font-bold text-accent">{matchAccuracy.count}</div>
+              <div className="text-3xl font-semibold text-accent">{matchAccuracy.count}</div>
             </div>
           </div>
         </div>
