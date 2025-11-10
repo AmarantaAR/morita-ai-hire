@@ -1,8 +1,14 @@
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import berryLogo from "@/assets/morita-berry-logo.png";
+import { useState } from "react";
+import { ContactFormDialog } from "./ContactFormDialog";
 
 export const Footer = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
+    <>
+      <ContactFormDialog open={isFormOpen} onOpenChange={setIsFormOpen} />
     <footer className="bg-gradient-dark text-primary-foreground py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-6 mb-6">
@@ -23,24 +29,13 @@ export const Footer = () => {
               Revolutionizing human resources with AI-powered intelligent recruiting.
             </p>
             <div className="flex items-center gap-2.5">
-              <a
-                href="#"
-                className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)] transition-all border border-primary/20"
-              >
-                <Linkedin className="w-4 h-4 text-primary" />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)] transition-all border border-primary/20"
-              >
-                <Twitter className="w-4 h-4 text-primary" />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)] transition-all border border-primary/20"
+              <button
+                onClick={() => setIsFormOpen(true)}
+                className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)] transition-all border border-primary/20 cursor-pointer"
+                aria-label="Contact us via email"
               >
                 <Mail className="w-4 h-4 text-primary" />
-              </a>
+              </button>
             </div>
           </div>
 
@@ -98,5 +93,6 @@ export const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
