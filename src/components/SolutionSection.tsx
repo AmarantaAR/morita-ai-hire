@@ -47,16 +47,21 @@ export const SolutionSection = () => {
               <div key={index} className="relative animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 {/* Connector line with gradient animation */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary via-secondary to-accent -z-10 opacity-50" />
+                  <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary via-secondary to-accent -z-10 opacity-50 animate-pulse" />
                 )}
                 
-                <div className="bg-card/80 backdrop-blur-sm p-6 rounded-xl border border-primary/20 hover:border-primary/40 hover:shadow-[var(--shadow-glow)] hover:-translate-y-1 h-full group transition-all">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 shadow-[var(--shadow-glow)] group-hover:scale-110 group-hover:rotate-6 transition-all">
-                    <Icon className="w-6 h-6 text-primary-foreground" />
+                <div className="bg-card/80 backdrop-blur-sm p-6 rounded-xl border border-primary/20 hover:border-primary/50 hover:shadow-[0_0_50px_hsl(var(--primary)_/_0.6)] hover:-translate-y-2 hover:scale-[1.03] h-full group transition-all duration-500 relative overflow-hidden">
+                  {/* Animated gradient background on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 shadow-[var(--shadow-glow)] group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 animate-float-slow">
+                      <Icon className="w-6 h-6 text-primary-foreground group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300" />
+                    </div>
+                    <div className="text-xs font-medium text-primary uppercase tracking-wider mb-2 group-hover:text-secondary transition-colors duration-300">Step {index + 1}</div>
+                    <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{step.description}</p>
                   </div>
-                  <div className="text-xs font-medium text-primary uppercase tracking-wider mb-2">Step {index + 1}</div>
-                  <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
                 </div>
               </div>
             );
