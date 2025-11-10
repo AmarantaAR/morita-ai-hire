@@ -1,8 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-ai-recruiter.jpg";
+import { useCounter } from "@/hooks/use-counter";
 
 export const HeroSection = () => {
+  const costReduction = useCounter({ end: 70, isPercentage: true, duration: 2500 });
+  const fasterHiring = useCounter({ end: 5, suffix: "x", duration: 2500 });
+  const lessBias = useCounter({ end: 40, isPercentage: true, duration: 2500 });
+  const activeInterviews = useCounter({ end: 1247, duration: 3000 });
+  const matchAccuracy = useCounter({ end: 94.8, isPercentage: true, duration: 3000 });
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
       {/* Animated background elements */}
@@ -22,8 +29,8 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className="text-center lg:text-left animate-slide-in-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 animate-bounce-slow hover:animate-pulse-glow transition-all cursor-pointer">
-              <Sparkles className="w-4 h-4 animate-spin-slow" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 transition-all">
+              <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium">The Future of HR is Here</span>
             </div>
             
@@ -55,18 +62,18 @@ export const HeroSection = () => {
             </div>
             
             <div className="mt-12 flex items-center gap-8 justify-center lg:justify-start text-sm">
-              <div>
-                <div className="text-2xl font-bold text-primary">70%</div>
+              <div ref={costReduction.ref}>
+                <div className="text-2xl font-bold text-primary">{costReduction.count}</div>
                 <div className="text-muted-foreground">Cost Reduction</div>
               </div>
               <div className="w-px h-12 bg-border" />
-              <div>
-                <div className="text-2xl font-bold text-primary">5x</div>
+              <div ref={fasterHiring.ref}>
+                <div className="text-2xl font-bold text-primary">{fasterHiring.count}</div>
                 <div className="text-muted-foreground">Faster Hiring</div>
               </div>
               <div className="w-px h-12 bg-border" />
-              <div>
-                <div className="text-2xl font-bold text-primary">40%</div>
+              <div ref={lessBias.ref}>
+                <div className="text-2xl font-bold text-primary">{lessBias.count}</div>
                 <div className="text-muted-foreground">Less Bias</div>
               </div>
             </div>
@@ -84,14 +91,14 @@ export const HeroSection = () => {
             </div>
             
             {/* Floating stats cards with glass-morphism */}
-            <div className="absolute -bottom-6 -left-6 bg-card/80 backdrop-blur-xl p-5 rounded-xl shadow-[var(--shadow-glow)] border border-primary/30 animate-float hover:scale-110 hover:border-primary/50 transition-all cursor-pointer" style={{ animationDelay: "0.3s" }}>
+            <div ref={activeInterviews.ref} className="absolute -bottom-6 -left-6 bg-card/80 backdrop-blur-xl p-5 rounded-xl shadow-[var(--shadow-glow)] border border-primary/30 animate-float hover:scale-110 hover:border-primary/50 transition-all cursor-pointer" style={{ animationDelay: "0.3s" }}>
               <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Active Interviews</div>
-              <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">1,247</div>
+              <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">{activeInterviews.count}</div>
             </div>
             
-            <div className="absolute -top-6 -right-6 bg-card/80 backdrop-blur-xl p-5 rounded-xl shadow-[var(--shadow-mint)] border border-accent/30 animate-float hover:scale-110 hover:border-accent/50 transition-all cursor-pointer" style={{ animationDelay: "0.8s" }}>
+            <div ref={matchAccuracy.ref} className="absolute -top-6 -right-6 bg-card/80 backdrop-blur-xl p-5 rounded-xl shadow-[var(--shadow-mint)] border border-accent/30 animate-float hover:scale-110 hover:border-accent/50 transition-all cursor-pointer" style={{ animationDelay: "0.8s" }}>
               <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Match Accuracy</div>
-              <div className="text-3xl font-bold text-accent">94.8%</div>
+              <div className="text-3xl font-bold text-accent">{matchAccuracy.count}</div>
             </div>
           </div>
         </div>

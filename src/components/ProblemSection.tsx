@@ -1,6 +1,9 @@
 import { Clock, DollarSign, Users, AlertCircle } from "lucide-react";
+import { useCounter } from "@/hooks/use-counter";
 
 export const ProblemSection = () => {
+  const daysCounter = useCounter({ end: 42, duration: 2500 });
+
   const problems = [
     {
       icon: Clock,
@@ -56,12 +59,12 @@ export const ProblemSection = () => {
           })}
         </div>
 
-        <div className="mt-16 bg-gradient-dark rounded-3xl p-10 sm:p-16 text-center berry-dots border border-primary/20 shadow-[var(--shadow-glow)]">
+        <div ref={daysCounter.ref} className="mt-16 bg-gradient-dark rounded-3xl p-10 sm:p-16 text-center berry-dots border border-primary/20 shadow-[var(--shadow-glow)]">
           <p className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4 leading-tight">
-            Average time-to-hire: <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent animate-pulse">42 days</span>
+            Average time-to-hire: <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">{daysCounter.count} days</span>
           </p>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            While competitors find their perfect candidates in under a week with Morita's AI-powered solution.
+            While competitors find their perfect candidates in under a week with Morita&apos;s AI-powered solution.
           </p>
         </div>
       </div>

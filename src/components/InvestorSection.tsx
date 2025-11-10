@@ -1,29 +1,35 @@
 import { TrendingUp, Globe, Users, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCounter } from "@/hooks/use-counter";
 
 export const InvestorSection = () => {
+  const marketSize = useCounter({ end: 30, prefix: "$", suffix: "B", duration: 2500 });
+  const costReduction = useCounter({ end: 70, isPercentage: true, duration: 2500 });
+  const timeToHire = useCounter({ end: 5, suffix: "x", duration: 2500 });
+  const biasReduction = useCounter({ end: 40, isPercentage: true, duration: 2500 });
+
   const metrics = [
     {
       icon: Globe,
-      value: "$30B",
+      counter: marketSize,
       label: "Global HR Tech Market",
       subtitle: "Expected to reach $90B by 2028",
     },
     {
       icon: TrendingUp,
-      value: "70%",
+      counter: costReduction,
       label: "Cost Reduction",
       subtitle: "For companies using AI recruiting",
     },
     {
       icon: Users,
-      value: "5x",
+      counter: timeToHire,
       label: "Faster Time-to-Hire",
       subtitle: "Compared to traditional methods",
     },
     {
       icon: DollarSign,
-      value: "40%",
+      counter: biasReduction,
       label: "Bias Reduction",
       subtitle: "Through objective AI evaluation",
     },
@@ -55,6 +61,7 @@ export const InvestorSection = () => {
             return (
               <div
                 key={index}
+                ref={metric.counter.ref}
                 className="bg-card/80 backdrop-blur-sm p-8 rounded-2xl border border-primary/30 hover:border-primary/60 hover:shadow-[var(--shadow-glow)] hover:scale-105 transition-all animate-slide-up group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -64,7 +71,7 @@ export const InvestorSection = () => {
                   </div>
                 </div>
                 <div className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform origin-left">
-                  {metric.value}
+                  {metric.counter.count}
                 </div>
                 <div className="text-base font-bold mb-2">{metric.label}</div>
                 <div className="text-sm text-muted-foreground leading-relaxed">{metric.subtitle}</div>
