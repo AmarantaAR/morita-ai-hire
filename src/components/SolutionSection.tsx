@@ -28,6 +28,13 @@ export const SolutionSection = () => {
     <section className="py-20 relative overflow-hidden berry-dots">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
       
+      {/* Animated light orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-float-slow opacity-40" />
+        <div className="absolute bottom-40 right-20 w-96 h-96 bg-secondary/15 rounded-full blur-3xl animate-float opacity-30" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-accent/20 rounded-full blur-3xl animate-pulse opacity-25" style={{ animationDelay: '2s' }} />
+      </div>
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl font-bold mb-3 leading-tight">
@@ -44,23 +51,30 @@ export const SolutionSection = () => {
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <div key={index} className="relative animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                {/* Connector line with gradient animation */}
+              <div 
+                key={index} 
+                className="relative opacity-0 animate-fade-in" 
+                style={{ 
+                  animationDelay: `${index * 0.2 + 0.3}s`,
+                  animationFillMode: 'forwards'
+                }}
+              >
+                {/* Connector line with subtle glow */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary via-secondary to-accent -z-10 opacity-50 animate-pulse" />
+                  <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary/30 via-secondary/20 to-transparent -z-10" />
                 )}
                 
-                <div className="bg-card/80 backdrop-blur-sm p-6 rounded-xl border border-primary/20 hover:border-primary/50 hover:shadow-[0_0_50px_hsl(var(--primary)_/_0.6)] hover:-translate-y-2 hover:scale-[1.03] h-full group transition-all duration-500 relative overflow-hidden">
-                  {/* Animated gradient background on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="bg-card/50 backdrop-blur-sm p-6 rounded-xl border border-primary/20 hover:border-primary/40 hover:shadow-[0_0_40px_hsl(var(--primary)_/_0.3)] hover:-translate-y-1 h-full group transition-all duration-300 relative overflow-hidden">
+                  {/* Subtle glow circle on hover */}
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   
                   <div className="relative z-10">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 shadow-[var(--shadow-glow)] group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 animate-float-slow">
-                      <Icon className="w-6 h-6 text-primary-foreground group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300" />
+                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 shadow-[0_0_20px_hsl(var(--primary)_/_0.4)] group-hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.6)] transition-all duration-300">
+                      <Icon className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div className="text-xs font-medium text-primary uppercase tracking-wider mb-2 group-hover:text-secondary transition-colors duration-300">Step {index + 1}</div>
-                    <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{step.description}</p>
+                    <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground">{step.description}</p>
                   </div>
                 </div>
               </div>
