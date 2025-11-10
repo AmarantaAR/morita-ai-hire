@@ -12,11 +12,16 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="relative w-8 h-8 transition-transform group-hover:scale-110 duration-300">
-              <img src={berrLogo} alt="Morita Berry Logo" className="w-full h-full object-contain" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">Morita-hr</span>
+          <div className="flex items-center gap-1 group cursor-pointer">
+            <span className="text-2xl font-clash font-bold lowercase tracking-wide text-foreground group-hover:text-primary transition-colors">
+              mor
+              <span className="relative inline-block">
+                i
+                <span className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-accent rounded-full animate-pulse shadow-[0_0_10px_hsl(var(--accent))]" />
+              </span>
+              ta
+            </span>
+            <span className="text-lg font-sans text-muted-foreground ml-0.5">.hr</span>
           </div>
 
           {/* Desktop Navigation */}

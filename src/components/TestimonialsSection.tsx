@@ -26,12 +26,12 @@ export const TestimonialsSection = () => {
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight">
             Trusted by Forward-Thinking{" "}
-            <span className="text-primary">Companies</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent">Companies</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            See what early adopters are saying about their experience with Morita-hr.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            See what early adopters are saying about their experience with Morita.
           </p>
         </div>
 
@@ -39,17 +39,17 @@ export const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-card p-8 rounded-2xl border border-border hover:border-primary/50 hover:shadow-[var(--shadow-card)] transition-all animate-slide-up"
+              className="bg-card/80 backdrop-blur-sm p-10 rounded-2xl border border-primary/20 hover:border-primary/50 hover:shadow-[var(--shadow-glow)] hover:-translate-y-2 transition-all animate-slide-up group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <Quote className="w-10 h-10 text-primary/20 mb-4" />
-              <p className="text-muted-foreground mb-6 leading-relaxed italic">
+              <Quote className="w-12 h-12 text-primary/30 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all" />
+              <p className="text-muted-foreground mb-8 leading-relaxed text-lg italic">
                 "{testimonial.quote}"
               </p>
-              <div className="border-t border-border pt-4">
-                <div className="font-semibold">{testimonial.author}</div>
-                <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                <div className="text-sm text-primary">{testimonial.company}</div>
+              <div className="border-t border-primary/20 pt-6">
+                <div className="font-bold text-lg">{testimonial.author}</div>
+                <div className="text-sm text-muted-foreground mt-1">{testimonial.role}</div>
+                <div className="text-sm text-primary font-semibold mt-1">{testimonial.company}</div>
               </div>
             </div>
           ))}

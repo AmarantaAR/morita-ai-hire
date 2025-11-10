@@ -35,14 +35,14 @@ export const InvestorSection = () => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-4">
+          <div className="inline-block px-6 py-3 bg-gradient-to-r from-accent/20 to-secondary/20 backdrop-blur-sm border border-accent/30 text-accent rounded-full text-sm font-bold mb-6 uppercase tracking-wider shadow-[var(--shadow-mint)]">
             For Investors
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight">
             The Market Opportunity is{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">Massive</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             AI-powered recruiting is reshaping the $500B+ global recruitment industry. 
             Join us in building the future of human resources.
           </p>
@@ -55,29 +55,29 @@ export const InvestorSection = () => {
             return (
               <div
                 key={index}
-                className="bg-card p-6 rounded-2xl border border-border hover:border-primary/50 hover:shadow-[var(--shadow-card)] transition-all animate-slide-up"
+                className="bg-card/80 backdrop-blur-sm p-8 rounded-2xl border border-primary/30 hover:border-primary/60 hover:shadow-[var(--shadow-glow)] hover:scale-105 transition-all animate-slide-up group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-primary" />
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-[var(--shadow-glow)] group-hover:scale-110 group-hover:rotate-6 transition-all">
+                    <Icon className="w-6 h-6 text-primary-foreground" />
                   </div>
                 </div>
-                <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
+                <div className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform origin-left">
                   {metric.value}
                 </div>
-                <div className="text-sm font-semibold mb-1">{metric.label}</div>
-                <div className="text-xs text-muted-foreground">{metric.subtitle}</div>
+                <div className="text-base font-bold mb-2">{metric.label}</div>
+                <div className="text-sm text-muted-foreground leading-relaxed">{metric.subtitle}</div>
               </div>
             );
           })}
         </div>
 
         {/* Why Invest Section */}
-        <div className="bg-gradient-dark rounded-3xl p-8 sm:p-12 animate-scale-in berry-dots">
+        <div className="bg-gradient-dark rounded-3xl p-10 sm:p-16 animate-scale-in berry-dots border border-primary/30 shadow-[var(--shadow-glow)]">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-8 text-center text-primary-foreground">
-              Why Invest in Morita-hr?
+            <h3 className="text-4xl font-bold mb-10 text-center bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              Why Invest in Morita?
             </h3>
             
             <div className="grid md:grid-cols-2 gap-8 mb-10">
@@ -127,7 +127,7 @@ export const InvestorSection = () => {
             </div>
 
             <div className="text-center">
-              <Button variant="hero" size="xl">
+              <Button variant="hero" size="xl" className="shadow-[0_0_80px_hsl(var(--primary)_/_0.5)]">
                 Schedule Investor Meeting
               </Button>
             </div>

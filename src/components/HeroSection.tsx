@@ -27,22 +27,29 @@ export const HeroSection = () => {
               <span className="text-sm font-medium">The Future of HR is Here</span>
             </div>
             
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] tracking-tight">
               Meet the AI Recruiter That{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">Never Sleeps</span>
+              <span className="bg-gradient-primary bg-clip-text text-transparent animate-pulse">Never Sleeps</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-              Our AI conducts interviews, analyzes candidates, and finds the perfect match automatically. 
-              Transform your hiring process with intelligent, personalized recruiting at scale.
+            <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              Morita doesn't just analyze — she understands. Our AI conducts intelligent interviews, 
+              analyzes candidates with precision, and finds the perfect match automatically.
+            </p>
+            
+            <p className="text-sm text-muted-foreground/80 mb-8 max-w-2xl mx-auto lg:mx-0">
+              Where technology meets intuition.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="xl" className="group">
-                Request Early Access
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="xl">
+              <div className="flex flex-col items-center sm:items-start">
+                <Button variant="hero" size="xl" className="group w-full sm:w-auto">
+                  Request Early Access
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <span className="text-xs text-muted-foreground mt-2">No spam, just smarter hiring</span>
+              </div>
+              <Button variant="outline" size="xl" className="w-full sm:w-auto">
                 For Investors
               </Button>
             </div>
@@ -67,24 +74,24 @@ export const HeroSection = () => {
 
           {/* Right image */}
           <div className="relative animate-slide-in-right">
-            <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-glow)] transition-all duration-500 hover:scale-105">
+            <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-glow)] hover:shadow-[0_0_100px_hsl(var(--primary)_/_0.4)] transition-all duration-500 hover:scale-105 border border-primary/20">
               <img 
                 src={heroImage} 
                 alt="AI Recruiter Dashboard showing candidate analysis and interview interface"
                 className="w-full h-auto"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             </div>
             
-            {/* Floating stats cards with animations */}
-            <div className="absolute -bottom-6 -left-6 bg-card p-4 rounded-xl shadow-[var(--shadow-card)] border border-border animate-float hover:scale-110 transition-transform cursor-pointer" style={{ animationDelay: "0.3s" }}>
-              <div className="text-sm text-muted-foreground">Active Interviews</div>
-              <div className="text-2xl font-bold text-primary">1,247</div>
+            {/* Floating stats cards with glass-morphism */}
+            <div className="absolute -bottom-6 -left-6 bg-card/80 backdrop-blur-xl p-5 rounded-xl shadow-[var(--shadow-glow)] border border-primary/30 animate-float hover:scale-110 hover:border-primary/50 transition-all cursor-pointer" style={{ animationDelay: "0.3s" }}>
+              <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Active Interviews</div>
+              <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">1,247</div>
             </div>
             
-            <div className="absolute -top-6 -right-6 bg-card p-4 rounded-xl shadow-[var(--shadow-card)] border border-border animate-float hover:scale-110 transition-transform cursor-pointer" style={{ animationDelay: "0.8s" }}>
-              <div className="text-sm text-muted-foreground">Match Accuracy</div>
-              <div className="text-2xl font-bold text-secondary">94.8%</div>
+            <div className="absolute -top-6 -right-6 bg-card/80 backdrop-blur-xl p-5 rounded-xl shadow-[var(--shadow-mint)] border border-accent/30 animate-float hover:scale-110 hover:border-accent/50 transition-all cursor-pointer" style={{ animationDelay: "0.8s" }}>
+              <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Match Accuracy</div>
+              <div className="text-3xl font-bold text-accent">94.8%</div>
             </div>
           </div>
         </div>

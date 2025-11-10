@@ -44,11 +44,11 @@ export const FeaturesSection = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight">
             Powerful Features for{" "}
-            <span className="text-secondary">Modern Hiring</span>
+            <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">Modern Hiring</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Everything you need to revolutionize your recruitment process, powered by cutting-edge AI technology.
           </p>
         </div>
@@ -59,14 +59,17 @@ export const FeaturesSection = () => {
             return (
               <div
                 key={index}
-                className="group bg-card/10 backdrop-blur-sm p-8 rounded-2xl border border-primary/20 hover:border-primary/50 hover:bg-card/20 transition-all duration-300 hover:-translate-y-2 animate-slide-up"
+                className="group bg-card/5 backdrop-blur-md p-8 rounded-2xl border border-primary/20 hover:border-primary/60 hover:bg-card/10 hover:shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-3 animate-slide-up relative overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-12 group-hover:bg-primary/30 transition-all animate-float">
-                  <Icon className="w-7 h-7 text-primary" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-accent/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all border border-primary/30">
+                    <Icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-card-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-card-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
             );
           })}

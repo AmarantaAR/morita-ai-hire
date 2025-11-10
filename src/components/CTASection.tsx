@@ -14,22 +14,22 @@ export const CTASection = () => {
               <span className="text-sm font-medium">Join the Revolution</span>
             </div>
             
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] tracking-tight">
               Let's Build the Future of Hiring —{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">Today</span>
             </h2>
             
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
               Whether you're ready to transform your recruitment process or interested in investing in 
               the future of HR tech, we'd love to hear from you.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button variant="hero" size="xl" className="group">
+              <Button variant="hero" size="xl" className="group shadow-[0_0_80px_hsl(var(--primary)_/_0.4)]">
                 Request Demo
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="xl">
+              <Button variant="outline" size="xl" className="shadow-[0_0_40px_hsl(var(--primary)_/_0.2)]">
                 I'm an Investor
               </Button>
             </div>
