@@ -6,6 +6,16 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, ArrowLeft, Check } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Please enter a valid email address").max(255, "Email must be less than 255 characters"),
+  company: z.string().trim().max(100, "Company name must be less than 100 characters").optional(),
+  role: z.string().trim().max(100, "Role must be less than 100 characters").optional(),
+  type: z.enum(["early-access", "investor"]),
+  message: z.string().trim().max(1000, "Message must be less than 1000 characters").optional(),
+});
 
 interface ContactFormDialogProps {
   open: boolean;
@@ -23,15 +33,43 @@ export const ContactFormDialog = ({ open, onOpenChange, defaultType = "early-acc
     type: defaultType,
     message: "",
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
 
+  const validateStep = (stepNumber: number): boolean => {
+    setErrors({});
+    
+    if (stepNumber === 1) {
+      try {
+        contactSchema.pick({ name: true, email: true }).parse({
+          name: formData.name,
+          email: formData.email,
+        });
+        return true;
+      } catch (error) {
+        if (error instanceof z.ZodError) {
+          const newErrors: Record<string, string> = {};
+          error.errors.forEach((err) => {
+            if (err.path[0]) {
+              newErrors[err.path[0] as string] = err.message;
+            }
+          });
+          setErrors(newErrors);
+          toast({
+            title: "Validation Error",
+            description: "Please check the form fields",
+            variant: "destructive",
+          });
+        }
+        return false;
+      }
+    }
+    
+    return true;
+  };
+
   const handleNext = () => {
-    if (step === 1 && (!formData.name || !formData.email)) {
-      toast({
-        title: "Required fields",
-        description: "Please fill in your name and email",
-        variant: "destructive",
-      });
+    if (!validateStep(step)) {
       return;
     }
     setStep(step + 1);
@@ -40,25 +78,45 @@ export const ContactFormDialog = ({ open, onOpenChange, defaultType = "early-acc
   const handleBack = () => setStep(step - 1);
 
   const handleSubmit = () => {
-    // Here you would normally send the data to your backend
-    console.log("Form submitted:", formData);
-    toast({
-      title: "Success!",
-      description: "We'll be in touch soon. Thank you for your interest!",
-    });
-    onOpenChange(false);
-    // Reset form
-    setTimeout(() => {
-      setStep(1);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        role: "",
-        type: defaultType,
-        message: "",
+    try {
+      contactSchema.parse(formData);
+      
+      // Here you would normally send the data to your backend
+      console.log("Form submitted:", formData);
+      toast({
+        title: "Success!",
+        description: "We'll be in touch soon. Thank you for your interest!",
       });
-    }, 300);
+      onOpenChange(false);
+      // Reset form
+      setTimeout(() => {
+        setStep(1);
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          role: "",
+          type: defaultType,
+          message: "",
+        });
+        setErrors({});
+      }, 300);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const newErrors: Record<string, string> = {};
+        error.errors.forEach((err) => {
+          if (err.path[0]) {
+            newErrors[err.path[0] as string] = err.message;
+          }
+        });
+        setErrors(newErrors);
+        toast({
+          title: "Validation Error",
+          description: "Please check all required fields",
+          variant: "destructive",
+        });
+      }
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -105,8 +163,15 @@ export const ContactFormDialog = ({ open, onOpenChange, defaultType = "early-acc
                   id="name"
                   placeholder="John Doe"
                   value={formData.name}
-                  onChange={(e) => handleChange("name", e.target.value)}
+                  onChange={(e) => {
+                    handleChange("name", e.target.value);
+                    if (errors.name) setErrors({ ...errors, name: "" });
+                  }}
+                  className={errors.name ? "border-destructive" : ""}
                 />
+                {errors.name && (
+                  <p className="text-sm text-destructive">{errors.name}</p>
+                )}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email *</Label>
@@ -115,8 +180,15 @@ export const ContactFormDialog = ({ open, onOpenChange, defaultType = "early-acc
                   type="email"
                   placeholder="john@company.com"
                   value={formData.email}
-                  onChange={(e) => handleChange("email", e.target.value)}
+                  onChange={(e) => {
+                    handleChange("email", e.target.value);
+                    if (errors.email) setErrors({ ...errors, email: "" });
+                  }}
+                  className={errors.email ? "border-destructive" : ""}
                 />
+                {errors.email && (
+                  <p className="text-sm text-destructive">{errors.email}</p>
+                )}
               </div>
             </div>
           )}
