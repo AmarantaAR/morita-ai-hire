@@ -65,24 +65,24 @@ export const SolutionSection = () => {
 
         {/* Key Benefits */}
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-card/80 backdrop-blur-sm p-7 rounded-xl border border-primary/30 hover:shadow-[var(--shadow-glow)] hover:border-primary/40 transition-all animate-scale-in">
+          <div className="bg-card/80 backdrop-blur-sm p-7 rounded-xl border border-primary/30 hover:bg-card hover:shadow-[0_0_50px_hsl(var(--primary)_/_0.5)] hover:border-primary/60 hover:scale-[1.02] transition-all duration-300 animate-scale-in group">
             <div className="flex items-start gap-3">
-              <div className="w-11 h-11 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-primary/30">
-                <Zap className="w-5 h-5 text-primary" />
+              <div className="w-11 h-11 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-primary/30 group-hover:bg-primary/30 group-hover:border-primary/50 group-hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.4)] transition-all duration-300">
+                <Zap className="w-5 h-5 text-primary group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_hsl(var(--primary))] transition-all duration-300" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3">For Candidates</h3>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">For Candidates</h3>
                 <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2.5 text-sm">
-                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300">
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
                     <span>Interview on your schedule, 24/7 availability</span>
                   </li>
-                  <li className="flex items-start gap-2.5 text-sm">
-                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300">
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
                     <span>Fair evaluation based on skills, not first impressions</span>
                   </li>
-                  <li className="flex items-start gap-2.5 text-sm">
-                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300">
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
                     <span>Instant feedback and transparent process</span>
                   </li>
                 </ul>
@@ -90,24 +90,24 @@ export const SolutionSection = () => {
             </div>
           </div>
 
-          <div className="bg-card/80 backdrop-blur-sm p-7 rounded-xl border border-accent/30 hover:shadow-[var(--shadow-mint)] hover:border-accent/40 transition-all animate-scale-in" style={{ animationDelay: "0.2s" }}>
+          <div className="bg-card/80 backdrop-blur-sm p-7 rounded-xl border border-accent/30 hover:bg-card hover:shadow-[0_0_50px_hsl(var(--accent)_/_0.5)] hover:border-accent/60 hover:scale-[1.02] transition-all duration-300 animate-scale-in group" style={{ animationDelay: "0.2s" }}>
             <div className="flex items-start gap-3">
-              <div className="w-11 h-11 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-accent/30">
-                <BarChart3 className="w-5 h-5 text-accent" />
+              <div className="w-11 h-11 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-accent/30 group-hover:bg-accent/30 group-hover:border-accent/50 group-hover:shadow-[0_0_20px_hsl(var(--accent)_/_0.4)] transition-all duration-300">
+                <BarChart3 className="w-5 h-5 text-accent group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_hsl(var(--accent))] transition-all duration-300" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3">For Recruiters</h3>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">For Recruiters</h3>
                 <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2.5 text-sm">
-                    <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300">
+                    <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
                     <span>Comprehensive dashboard with ranked candidates</span>
                   </li>
-                  <li className="flex items-start gap-2.5 text-sm">
-                    <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300">
+                    <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
                     <span>Detailed interview summaries and insights</span>
                   </li>
-                  <li className="flex items-start gap-2.5 text-sm">
-                    <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                  <li className="flex items-start gap-2.5 text-sm group-hover:text-foreground transition-colors duration-300">
+                    <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
                     <span>Seamless integration with existing ATS systems</span>
                   </li>
                 </ul>
