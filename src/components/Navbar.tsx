@@ -15,15 +15,15 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-1 group cursor-pointer">
-            <span className="text-2xl font-clash font-bold lowercase tracking-wide text-foreground group-hover:text-primary transition-colors">
+            <span className="text-2xl font-recoleta font-bold lowercase tracking-wide text-foreground group-hover:bg-gradient-primary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
               mor
               <span className="relative inline-block">
                 i
-                <span className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-accent rounded-full animate-pulse shadow-[0_0_10px_hsl(var(--accent))]" />
+                <span className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-2 h-2 bg-accent-warm rounded-full shadow-[0_0_12px_hsl(var(--accent-warm))] opacity-80 group-hover:opacity-100 transition-opacity" />
               </span>
               ta
             </span>
-            <span className="text-lg font-sans text-muted-foreground ml-0.5">.hr</span>
+            <span className="text-base font-sans text-secondary/60 ml-0.5">.hr</span>
           </div>
 
           {/* Desktop Navigation */}
