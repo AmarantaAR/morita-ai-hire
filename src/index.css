@@ -123,8 +123,8 @@ All colors MUST be HSL.
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Clash Display', sans-serif !important;
-    font-weight: 700;
+    font-family: 'VT323', monospace !important;
+    font-weight: 400;
   }
   
   body::before {
