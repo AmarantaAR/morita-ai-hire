@@ -35,9 +35,6 @@ export const Navbar = () => {
             <a href="#investors" className="text-sm font-medium hover:text-primary transition-colors">
               For Investors
             </a>
-            <a href="#testimonials" className="text-sm font-medium hover:text-primary transition-colors">
-              Testimonials
-            </a>
           </div>
 
           {/* CTA Buttons */}
@@ -75,9 +72,6 @@ export const Navbar = () => {
               </a>
               <a href="#investors" className="text-sm font-medium hover:text-primary transition-colors">
                 For Investors
-              </a>
-              <a href="#testimonials" className="text-sm font-medium hover:text-primary transition-colors">
-                Testimonials
               </a>
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
                 <Button variant="ghost" size="sm">
