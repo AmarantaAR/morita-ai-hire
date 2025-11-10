@@ -43,10 +43,10 @@ export const ProblemSection = () => {
             return (
               <div
                 key={index}
-                className="bg-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all hover:shadow-[var(--shadow-card)] animate-slide-up"
+                className="bg-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all hover:shadow-[var(--shadow-card)] hover:-translate-y-2 animate-slide-up group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-12 h-12 bg-destructive/10 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-destructive/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all">
                   <Icon className="w-6 h-6 text-destructive" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{problem.title}</h3>

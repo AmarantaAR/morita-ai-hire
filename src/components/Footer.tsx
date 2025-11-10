@@ -1,4 +1,5 @@
 import { Linkedin, Twitter, Mail } from "lucide-react";
+import berryLogo from "@/assets/morita-berry-logo.png";
 
 export const Footer = () => {
   return (
@@ -7,8 +8,10 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg" />
+            <div className="flex items-center gap-3 mb-4 group cursor-pointer">
+              <div className="w-8 h-8 transition-transform group-hover:scale-110 group-hover:rotate-12 duration-300">
+                <img src={berryLogo} alt="Morita Berry Logo" className="w-full h-full object-contain" />
+              </div>
               <span className="text-xl font-bold text-card-foreground">Morita-hr</span>
             </div>
             <p className="text-muted-foreground mb-4 max-w-sm">
@@ -18,19 +21,19 @@ export const Footer = () => {
             <div className="flex items-center gap-3">
               <a
                 href="#"
-                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-1 transition-all"
               >
                 <Linkedin className="w-5 h-5 text-primary" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-1 transition-all"
               >
                 <Twitter className="w-5 h-5 text-primary" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-1 transition-all"
               >
                 <Mail className="w-5 h-5 text-primary" />
               </a>

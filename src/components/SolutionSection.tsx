@@ -45,13 +45,13 @@ export const SolutionSection = () => {
             const Icon = step.icon;
             return (
               <div key={index} className="relative animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                {/* Connector line */}
+                {/* Connector line with animation */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary to-secondary -z-10" />
+                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary to-secondary -z-10 animate-pulse" />
                 )}
                 
-                <div className="bg-card p-6 rounded-xl border-2 border-border hover:border-primary transition-all hover:shadow-[var(--shadow-glow)] h-full">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 shadow-[var(--shadow-glow)]">
+                <div className="bg-card p-6 rounded-xl border-2 border-border hover:border-primary transition-all hover:shadow-[var(--shadow-glow)] hover:-translate-y-2 h-full group">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 shadow-[var(--shadow-glow)] group-hover:scale-110 group-hover:rotate-6 transition-all animate-pulse-glow">
                     <Icon className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div className="text-sm font-semibold text-primary mb-2">Step {index + 1}</div>

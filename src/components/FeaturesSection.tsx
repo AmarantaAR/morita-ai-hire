@@ -59,10 +59,10 @@ export const FeaturesSection = () => {
             return (
               <div
                 key={index}
-                className="group bg-card/10 backdrop-blur-sm p-8 rounded-2xl border border-primary/20 hover:border-primary/50 hover:bg-card/20 transition-all duration-300 animate-slide-up"
+                className="group bg-card/10 backdrop-blur-sm p-8 rounded-2xl border border-primary/20 hover:border-primary/50 hover:bg-card/20 transition-all duration-300 hover:-translate-y-2 animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/30 transition-all">
+                <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-12 group-hover:bg-primary/30 transition-all animate-float">
                   <Icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-card-foreground">{feature.title}</h3>

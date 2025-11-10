@@ -1,18 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import berrLogo from "@/assets/morita-berry-logo.png";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border animate-slide-up">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg" />
-            <span className="text-xl font-bold">Morita-hr</span>
+          <div className="flex items-center gap-3 group cursor-pointer">
+            <div className="relative w-8 h-8 transition-transform group-hover:scale-110 duration-300">
+              <img src={berrLogo} alt="Morita Berry Logo" className="w-full h-full object-contain" />
+            </div>
+            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">Morita-hr</span>
           </div>
 
           {/* Desktop Navigation */}
