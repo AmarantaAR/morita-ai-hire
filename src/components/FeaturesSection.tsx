@@ -35,20 +35,23 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-dark text-primary-foreground relative overflow-hidden">
-      {/* Background decoration - subtle */}
+    <section className="py-20 bg-[#0B0A10] text-white relative overflow-hidden">
+      {/* Animated background decoration */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-accent rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#6B4EFF] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#00F5A0] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
       </div>
+
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#6B4EFF]/5 via-transparent to-[#00F5A0]/5 animate-pulse" style={{ animationDuration: '8s' }} />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-3 leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 leading-tight text-white">
             Powerful Features for{" "}
-            <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Modern Hiring</span>
+            <span className="bg-gradient-to-r from-[#00F5A0] to-[#A28CFF] bg-clip-text text-transparent animate-pulse" style={{ animationDuration: '3s' }}>Modern Hiring</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-white/70 max-w-2xl mx-auto">
             Everything you need to revolutionize your recruitment process, powered by cutting-edge AI technology.
           </p>
         </div>
@@ -57,28 +60,31 @@ export const FeaturesSection = () => {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const colors = [
-              { icon: "text-primary", glow: "group-hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.4)]" },
-              { icon: "text-accent", glow: "group-hover:shadow-[0_0_20px_hsl(var(--accent)_/_0.4)]" },
-              { icon: "text-secondary", glow: "group-hover:shadow-[0_0_20px_hsl(var(--secondary)_/_0.4)]" },
-              { icon: "text-primary", glow: "group-hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.4)]" },
-              { icon: "text-accent", glow: "group-hover:shadow-[0_0_20px_hsl(var(--accent)_/_0.4)]" },
-              { icon: "text-secondary", glow: "group-hover:shadow-[0_0_20px_hsl(var(--secondary)_/_0.4)]" },
+              { bg: "bg-[#6B4EFF]/10", icon: "text-[#6B4EFF]", glow: "group-hover:shadow-[0_0_30px_rgba(107,78,255,0.5)]", border: "border-[#6B4EFF]/30" },
+              { bg: "bg-[#00F5A0]/10", icon: "text-[#00F5A0]", glow: "group-hover:shadow-[0_0_30px_rgba(0,245,160,0.5)]", border: "border-[#00F5A0]/30" },
+              { bg: "bg-[#A28CFF]/10", icon: "text-[#A28CFF]", glow: "group-hover:shadow-[0_0_30px_rgba(162,140,255,0.5)]", border: "border-[#A28CFF]/30" },
+              { bg: "bg-[#6B4EFF]/10", icon: "text-[#6B4EFF]", glow: "group-hover:shadow-[0_0_30px_rgba(107,78,255,0.5)]", border: "border-[#6B4EFF]/30" },
+              { bg: "bg-[#00F5A0]/10", icon: "text-[#00F5A0]", glow: "group-hover:shadow-[0_0_30px_rgba(0,245,160,0.5)]", border: "border-[#00F5A0]/30" },
+              { bg: "bg-[#A28CFF]/10", icon: "text-[#A28CFF]", glow: "group-hover:shadow-[0_0_30px_rgba(162,140,255,0.5)]", border: "border-[#A28CFF]/30" },
             ];
             const colorScheme = colors[index % colors.length];
             
             return (
               <div
                 key={index}
-                className="group bg-card/40 backdrop-blur-sm border border-border/50 rounded-lg p-5 hover:bg-card/60 hover:border-primary/40 transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
+                className={`group bg-white/5 backdrop-blur-sm border ${colorScheme.border} rounded-xl p-5 hover:bg-white/10 hover:border-opacity-60 hover:-translate-x-1 transition-all duration-300 animate-fade-in cursor-pointer`}
+                style={{ animationDelay: `${index * 0.08}s` }}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`w-11 h-11 bg-background/80 rounded-lg flex items-center justify-center flex-shrink-0 ${colorScheme.glow} transition-all duration-300 group-hover:scale-110`}>
-                    <Icon className={`w-5 h-5 ${colorScheme.icon} group-hover:brightness-125 transition-all`} strokeWidth={2} />
+                  <div className={`w-12 h-12 ${colorScheme.bg} rounded-xl flex items-center justify-center flex-shrink-0 ${colorScheme.glow} transition-all duration-300 group-hover:scale-125 group-hover:rotate-3 border ${colorScheme.border}`}>
+                    <Icon className={`w-6 h-6 ${colorScheme.icon} group-hover:drop-shadow-[0_0_8px_currentColor] transition-all`} strokeWidth={2.5} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold mb-1.5 text-foreground">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+                    <h3 className="text-base font-bold mb-1.5 text-white group-hover:text-[#00F5A0] transition-colors">{feature.title}</h3>
+                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors">{feature.description}</p>
+                  </div>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#00F5A0] animate-pulse" />
                   </div>
                 </div>
               </div>
