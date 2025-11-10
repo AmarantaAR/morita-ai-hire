@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'sans': ['VT323', 'monospace'],
+        'sans': ['Handjet', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
