@@ -77,7 +77,7 @@ export const FeaturesSection = () => {
                   <div className={`w-14 h-14 ${colorScheme.icon} rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg`}>
                     <Icon className="w-7 h-7" strokeWidth={2} />
                   </div>
-                  <h3 className="text-lg font-bold mb-3 text-white">{feature.title}</h3>
+                  <h3 className="text-lg font-bold mb-3 text-accent">{feature.title}</h3>
                   <p className="text-white/85 leading-relaxed text-sm">{feature.description}</p>
                 </div>
               </div>
