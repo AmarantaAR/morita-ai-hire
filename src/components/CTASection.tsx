@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Rocket } from "lucide-react";
+import { ContactFormDialog } from "@/components/ContactFormDialog";
 
 export const CTASection = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogType, setDialogType] = useState<"early-access" | "investor">("early-access");
+
   return (
     <section className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-primary opacity-5" />
@@ -25,14 +30,36 @@ export const CTASection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-              <Button variant="hero" size="lg" className="group shadow-[0_0_60px_hsl(var(--primary)_/_0.4)]">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="group shadow-[0_0_60px_hsl(var(--primary)_/_0.4)]"
+                onClick={() => {
+                  setDialogType("early-access");
+                  setDialogOpen(true);
+                }}
+              >
                 Request Demo
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg" className="shadow-[0_0_40px_hsl(var(--primary)_/_0.2)]">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="shadow-[0_0_40px_hsl(var(--primary)_/_0.2)]"
+                onClick={() => {
+                  setDialogType("investor");
+                  setDialogOpen(true);
+                }}
+              >
                 I'm an Investor
               </Button>
             </div>
+
+            <ContactFormDialog 
+              open={dialogOpen} 
+              onOpenChange={setDialogOpen}
+              defaultType={dialogType}
+            />
 
             {/* Trust indicators */}
             <div className="flex flex-wrap items-center justify-center gap-5 text-xs text-muted-foreground">
