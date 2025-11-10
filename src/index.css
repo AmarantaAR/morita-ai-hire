@@ -123,8 +123,8 @@ All colors MUST be HSL.
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Handjet', sans-serif !important;
-    font-weight: 600;
+    font-family: 'Geo', sans-serif !important;
+    font-weight: 400;
   }
   
   body::before {

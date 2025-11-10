@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'sans': ['Handjet', 'sans-serif'],
+        'sans': ['Geo', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
