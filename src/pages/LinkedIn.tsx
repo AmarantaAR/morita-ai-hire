@@ -12,6 +12,41 @@ const LinkedIn = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+
+      {/* LinkedIn Cover Image Section - Screenshot This */}
+      <section className="w-full bg-background py-8">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-sm text-muted-foreground mb-4">
+            👇 Screenshot the area below for your LinkedIn cover (1584x396px)
+          </p>
+          <div 
+            className="relative mx-auto overflow-hidden rounded-lg"
+            style={{ width: '1584px', height: '396px', maxWidth: '100%' }}
+          >
+            {/* Background Image */}
+            <img 
+              src={heroNetworkImage} 
+              alt="AI Network" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/70" />
+            
+            {/* Text Content */}
+            <div className="relative z-10 h-full flex flex-col items-center justify-center px-12 text-center">
+              <h1 className="font-orbitron text-6xl font-bold mb-3 leading-tight">
+                <span className="text-accent">Hire with</span>{" "}
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  Empathy & Intelligence
+                </span>
+              </h1>
+              <p className="font-clash text-2xl font-medium text-muted-foreground">
+                morita<span className="text-secondary">.hr</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-20">
