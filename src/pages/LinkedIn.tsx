@@ -4,85 +4,61 @@ import { ArrowRight, Sparkles, CheckCircle, Brain, Users, TrendingUp, Linkedin }
 import { ContactFormDialog } from "@/components/ContactFormDialog";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import heroNetworkImage from "@/assets/linkedin-hero-network.png";
+
 const LinkedIn = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  return <div className="min-h-screen">
-      <Navbar />
 
-      {/* LinkedIn Cover Image Section - Screenshot This */}
-      <section className="w-full bg-background py-8">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-sm text-muted-foreground mb-4">
-            👇 Screenshot the area below for your LinkedIn cover (1584x396px)
-          </p>
-          <div className="relative mx-auto overflow-hidden rounded-lg" style={{
-          width: '1584px',
-          height: '396px',
-          maxWidth: '100%'
-        }}>
-            {/* Background Image */}
-            <img src={heroNetworkImage} alt="AI Network" className="absolute inset-0 w-full h-full object-cover" />
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/70" />
-            
-            {/* Text Content */}
-            <div className="relative z-10 h-full flex flex-col items-center justify-center px-12 text-center">
-              <h1 className="font-orbitron text-5xl font-bold mb-3 leading-tight">
-                <span className="text-accent">Hire Faster,</span>{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">Cheaper &
-Smarter</span>
-              </h1>
-              <p className="font-clash text-2xl font-medium text-muted-foreground">
-              <span className="text-secondary">.hr</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+  return (
+    <div className="min-h-screen">
+      <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-20">
-        {/* Hero Network Background Image */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-hero pt-20">
+        {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <img src={heroNetworkImage} alt="AI Network Visualization" className="w-full h-full object-cover opacity-80" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float-slow" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "1s" }} />
+          <div className="absolute top-1/2 left-1/4 w-40 h-40 bg-accent/5 rounded-full blur-2xl animate-float" style={{ animationDelay: "0.5s" }} />
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm text-primary mb-6 transition-all border border-primary/30">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 transition-all">
               <Linkedin className="w-4 h-4" />
               <span className="text-sm font-medium">Welcome from LinkedIn</span>
             </div>
             
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-[1.05] tracking-tight">
-              <span className="text-accent">Hire with</span>{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent block mt-2">Empathy & Intelligence</span>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] tracking-tight">
+              Recruiting with{" "}
+              <span className="bg-gradient-primary bg-clip-text text-transparent">Empathy & Intelligence</span>
             </h1>
             
-            <p className="text-2xl sm:text-3xl font-semibold text-accent mb-6 leading-tight">
-              Find Perfect Fit. Every Time.
+            <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed">
+              Morita understands what others miss. Our AI combines emotional intelligence with 
+              data precision to help you find candidates who truly fit—not just on paper.
             </p>
             
-            <p className="text-lg text-muted-foreground/90 mb-4 max-w-2xl mx-auto leading-relaxed">
-              Morita understands what others miss. Combining emotional intelligence with 
-              data precision to match candidates who truly fit—not just on paper.
-            </p>
-            
-            <p className="text-sm text-muted-foreground/70 mb-8 italic">
+            <p className="text-sm text-muted-foreground/80 mb-8 italic">
               "Technology with intuition. Recruiting with empathy."
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="hero" size="xl" className="group w-full sm:w-auto" onClick={() => setDialogOpen(true)}>
+              <Button 
+                variant="hero" 
+                size="xl" 
+                className="group w-full sm:w-auto"
+                onClick={() => setDialogOpen(true)}
+              >
                 Request Early Access
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <span className="text-xs text-muted-foreground">Join forward-thinking HR teams</span>
             </div>
 
-            <ContactFormDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+            <ContactFormDialog 
+              open={dialogOpen} 
+              onOpenChange={setDialogOpen}
+            />
           </div>
         </div>
       </section>
@@ -208,7 +184,7 @@ Smarter</span>
             <span className="text-sm font-medium">Join the Revolution</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 max-w-3xl mx-auto leading-tight text-accent">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 max-w-3xl mx-auto leading-tight">
             Let's build the future of{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">hiring — today</span>
           </h2>
@@ -217,7 +193,12 @@ Smarter</span>
             Request early access and be among the first to experience recruiting with empathy and intelligence.
           </p>
 
-          <Button variant="hero" size="xl" className="group" onClick={() => setDialogOpen(true)}>
+          <Button 
+            variant="hero" 
+            size="xl" 
+            className="group"
+            onClick={() => setDialogOpen(true)}
+          >
             Request Demo
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
@@ -225,6 +206,8 @@ Smarter</span>
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default LinkedIn;
