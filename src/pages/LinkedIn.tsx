@@ -28,7 +28,7 @@ const LinkedIn = () => {
             
             {/* Text Content */}
             <div className="relative z-10 h-full flex flex-col items-center justify-center px-12 text-center">
-              <h1 className="font-orbitron text-6xl font-bold mb-3 leading-tight">
+              <h1 className="font-orbitron text-5xl font-bold mb-3 leading-tight">
                 <span className="text-accent">Hire Faster,</span>{" "}
                 <span className="bg-gradient-primary bg-clip-text text-transparent">Cheaper &
 Smarter</span>
