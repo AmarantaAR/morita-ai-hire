@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 import berryLogo from "@/assets/morita-berry-logo.png";
 import { useState } from "react";
 import { ContactFormDialog } from "./ContactFormDialog";
@@ -36,6 +36,15 @@ export const Footer = () => {
               >
                 <Mail className="w-4 h-4 text-primary" />
               </button>
+              <a
+                href="https://www.linkedin.com/company/morita-hr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)] transition-all border border-primary/20 cursor-pointer"
+                aria-label="Visit our LinkedIn page"
+              >
+                <Linkedin className="w-4 h-4 text-primary" />
+              </a>
             </div>
           </div>
 
