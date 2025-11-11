@@ -4,6 +4,7 @@ import { ArrowRight, Sparkles, CheckCircle, Brain, Users, TrendingUp, Linkedin }
 import { ContactFormDialog } from "@/components/ContactFormDialog";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import heroNetworkImage from "@/assets/linkedin-hero-network.png";
 
 const LinkedIn = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -13,32 +14,39 @@ const LinkedIn = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-hero pt-20">
-        {/* Animated background elements */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-20">
+        {/* Hero Network Background Image */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float-slow" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "1s" }} />
-          <div className="absolute top-1/2 left-1/4 w-40 h-40 bg-accent/5 rounded-full blur-2xl animate-float" style={{ animationDelay: "0.5s" }} />
+          <img 
+            src={heroNetworkImage} 
+            alt="AI Network Visualization" 
+            className="w-full h-full object-cover opacity-80"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 transition-all">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm text-primary mb-6 transition-all border border-primary/30">
               <Linkedin className="w-4 h-4" />
               <span className="text-sm font-medium">Welcome from LinkedIn</span>
             </div>
             
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] tracking-tight">
-              Recruiting with{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">Empathy & Intelligence</span>
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-[1.05] tracking-tight">
+              <span className="text-accent">Hire with</span>{" "}
+              <span className="bg-gradient-primary bg-clip-text text-transparent block mt-2">Empathy & Intelligence</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed">
-              Morita understands what others miss. Our AI combines emotional intelligence with 
-              data precision to help you find candidates who truly fit—not just on paper.
+            <p className="text-2xl sm:text-3xl font-semibold text-accent mb-6 leading-tight">
+              Find Perfect Fit. Every Time.
             </p>
             
-            <p className="text-sm text-muted-foreground/80 mb-8 italic">
+            <p className="text-lg text-muted-foreground/90 mb-4 max-w-2xl mx-auto leading-relaxed">
+              Morita understands what others miss. Combining emotional intelligence with 
+              data precision to match candidates who truly fit—not just on paper.
+            </p>
+            
+            <p className="text-sm text-muted-foreground/70 mb-8 italic">
               "Technology with intuition. Recruiting with empathy."
             </p>
             
