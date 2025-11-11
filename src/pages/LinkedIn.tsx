@@ -5,12 +5,9 @@ import { ContactFormDialog } from "@/components/ContactFormDialog";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import heroNetworkImage from "@/assets/linkedin-hero-network.png";
-
 const LinkedIn = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navbar />
 
       {/* LinkedIn Cover Image Section - Screenshot This */}
@@ -19,29 +16,25 @@ const LinkedIn = () => {
           <p className="text-center text-sm text-muted-foreground mb-4">
             👇 Screenshot the area below for your LinkedIn cover (1584x396px)
           </p>
-          <div 
-            className="relative mx-auto overflow-hidden rounded-lg"
-            style={{ width: '1584px', height: '396px', maxWidth: '100%' }}
-          >
+          <div className="relative mx-auto overflow-hidden rounded-lg" style={{
+          width: '1584px',
+          height: '396px',
+          maxWidth: '100%'
+        }}>
             {/* Background Image */}
-            <img 
-              src={heroNetworkImage} 
-              alt="AI Network" 
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <img src={heroNetworkImage} alt="AI Network" className="absolute inset-0 w-full h-full object-cover" />
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/70" />
             
             {/* Text Content */}
             <div className="relative z-10 h-full flex flex-col items-center justify-center px-12 text-center">
               <h1 className="font-orbitron text-6xl font-bold mb-3 leading-tight">
-                <span className="text-accent">Hire with</span>{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Empathy & Intelligence
-                </span>
+                <span className="text-accent">Hire Faster,</span>{" "}
+                <span className="bg-gradient-primary bg-clip-text text-transparent">Cheaper &
+Smarter</span>
               </h1>
               <p className="font-clash text-2xl font-medium text-muted-foreground">
-                morita<span className="text-secondary">.hr</span>
+              <span className="text-secondary">.hr</span>
               </p>
             </div>
           </div>
@@ -52,11 +45,7 @@ const LinkedIn = () => {
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Hero Network Background Image */}
         <div className="absolute inset-0 overflow-hidden">
-          <img 
-            src={heroNetworkImage} 
-            alt="AI Network Visualization" 
-            className="w-full h-full object-cover opacity-80"
-          />
+          <img src={heroNetworkImage} alt="AI Network Visualization" className="w-full h-full object-cover opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
         </div>
 
@@ -86,22 +75,14 @@ const LinkedIn = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                variant="hero" 
-                size="xl" 
-                className="group w-full sm:w-auto"
-                onClick={() => setDialogOpen(true)}
-              >
+              <Button variant="hero" size="xl" className="group w-full sm:w-auto" onClick={() => setDialogOpen(true)}>
                 Request Early Access
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <span className="text-xs text-muted-foreground">Join forward-thinking HR teams</span>
             </div>
 
-            <ContactFormDialog 
-              open={dialogOpen} 
-              onOpenChange={setDialogOpen}
-            />
+            <ContactFormDialog open={dialogOpen} onOpenChange={setDialogOpen} />
           </div>
         </div>
       </section>
@@ -236,12 +217,7 @@ const LinkedIn = () => {
             Request early access and be among the first to experience recruiting with empathy and intelligence.
           </p>
 
-          <Button 
-            variant="hero" 
-            size="xl" 
-            className="group"
-            onClick={() => setDialogOpen(true)}
-          >
+          <Button variant="hero" size="xl" className="group" onClick={() => setDialogOpen(true)}>
             Request Demo
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
@@ -249,8 +225,6 @@ const LinkedIn = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default LinkedIn;
