@@ -28,10 +28,10 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#solution" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="/#solution" className="text-sm font-medium hover:text-primary transition-colors">
               Solution
             </a>
-            <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="/#features" className="text-sm font-medium hover:text-primary transition-colors">
               Features
             </a>
           </div>
@@ -60,10 +60,10 @@ export const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
-              <a href="#solution" className="text-sm font-medium hover:text-primary transition-colors">
+              <a href="/#solution" className="text-sm font-medium hover:text-primary transition-colors">
                 Solution
               </a>
-              <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">
+              <a href="/#features" className="text-sm font-medium hover:text-primary transition-colors">
                 Features
               </a>
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
