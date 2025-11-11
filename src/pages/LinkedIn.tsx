@@ -184,7 +184,7 @@ const LinkedIn = () => {
             <span className="text-sm font-medium">Join the Revolution</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 max-w-3xl mx-auto leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 max-w-3xl mx-auto leading-tight text-accent">
             Let's build the future of{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">hiring — today</span>
           </h2>
