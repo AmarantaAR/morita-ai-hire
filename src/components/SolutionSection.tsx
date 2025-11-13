@@ -58,7 +58,7 @@ export const SolutionSection = () => {
                   animationFillMode: 'forwards'
                 }}
               >
-                <div className="text-8xl font-bold text-accent mb-6 opacity-30 group-hover:opacity-50 transition-all duration-700">{step.number}</div>
+                <div className="text-8xl font-bold text-accent mb-6 opacity-30 dark:opacity-100 group-hover:opacity-50 dark:group-hover:opacity-100 transition-all duration-700">{step.number}</div>
                 <div className="mb-8 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-700">
                   <Icon className="w-10 h-10 text-primary/70" strokeWidth={1.5} />
                 </div>
