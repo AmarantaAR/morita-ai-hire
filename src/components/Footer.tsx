@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <>
       <ContactFormDialog open={isFormOpen} onOpenChange={setIsFormOpen} />
-    <footer className="bg-background border-t border-border py-12">
+    <footer className="bg-black border-t border-border/20 py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Brand */}
