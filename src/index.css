@@ -38,9 +38,9 @@ All colors MUST be HSL.
 
     --radius: 1.5rem;
     
-    --gradient-primary: linear-gradient(135deg, hsl(253 100% 66% / 0.15) 0%, hsl(270 85% 75% / 0.1) 50%, hsl(158 100% 48% / 0.15) 100%);
-    --gradient-hero: radial-gradient(ellipse 120% 100% at 50% -20%, hsl(253 100% 66% / 0.08) 0%, hsl(270 85% 75% / 0.05) 40%, transparent 80%);
-    --gradient-dark: radial-gradient(ellipse 100% 80% at 50% 120%, hsl(158 100% 48% / 0.06) 0%, transparent 60%);
+    --gradient-primary: linear-gradient(135deg, hsl(253 100% 66% / 0.08) 0%, hsl(270 85% 75% / 0.06) 50%, hsl(158 100% 48% / 0.1) 100%);
+    --gradient-hero: radial-gradient(ellipse 140% 120% at 50% -10%, hsl(253 100% 66% / 0.12) 0%, hsl(270 85% 75% / 0.08) 30%, hsl(158 100% 48% / 0.06) 60%, transparent 90%);
+    --gradient-dark: radial-gradient(ellipse 120% 100% at 50% 120%, hsl(158 100% 48% / 0.08) 0%, hsl(253 100% 66% / 0.04) 40%, transparent 70%);
     
     --shadow-glow: 0 20px 80px -20px hsl(253 100% 66% / 0.15);
     --shadow-mint: 0 20px 80px -20px hsl(158 100% 48% / 0.12);
@@ -98,9 +98,9 @@ All colors MUST be HSL.
     --input: 253 20% 18%;
     --ring: 253 100% 66%;
     
-    --gradient-primary: linear-gradient(135deg, hsl(253 100% 66% / 0.12) 0%, hsl(270 85% 75% / 0.08) 50%, hsl(158 100% 48% / 0.12) 100%);
-    --gradient-hero: radial-gradient(ellipse 120% 100% at 50% -20%, hsl(253 100% 66% / 0.15) 0%, hsl(270 85% 75% / 0.1) 40%, transparent 80%);
-    --gradient-dark: radial-gradient(ellipse 100% 80% at 50% 120%, hsl(158 100% 48% / 0.1) 0%, transparent 60%);
+    --gradient-primary: linear-gradient(135deg, hsl(253 100% 66% / 0.1) 0%, hsl(270 85% 75% / 0.08) 50%, hsl(158 100% 48% / 0.12) 100%);
+    --gradient-hero: radial-gradient(ellipse 140% 120% at 50% -10%, hsl(253 100% 66% / 0.18) 0%, hsl(270 85% 75% / 0.12) 30%, hsl(158 100% 48% / 0.1) 60%, transparent 90%);
+    --gradient-dark: radial-gradient(ellipse 120% 100% at 50% 120%, hsl(158 100% 48% / 0.12) 0%, hsl(253 100% 66% / 0.06) 40%, transparent 70%);
     
     --shadow-glow: 0 20px 100px -20px hsl(253 100% 66% / 0.25);
     --shadow-mint: 0 20px 100px -20px hsl(158 100% 48% / 0.2);
@@ -161,16 +161,17 @@ All colors MUST be HSL.
     left: -50%;
     right: -50%;
     bottom: -50%;
-    opacity: 0.4;
+    opacity: 0.5;
     pointer-events: none;
     z-index: 1;
     background: 
-      radial-gradient(circle 800px at 20% 30%, hsl(var(--accent) / 0.08) 0%, transparent 50%),
-      radial-gradient(circle 600px at 80% 70%, hsl(var(--primary) / 0.06) 0%, transparent 50%),
-      radial-gradient(circle 700px at 50% 50%, hsl(var(--accent) / 0.05) 0%, transparent 50%);
-    filter: blur(120px);
+      radial-gradient(circle 1000px at 25% 35%, hsl(var(--accent) / 0.12) 0%, transparent 55%),
+      radial-gradient(circle 800px at 75% 65%, hsl(var(--primary) / 0.1) 0%, transparent 55%),
+      radial-gradient(circle 900px at 50% 50%, hsl(270 85% 75% / 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 1200px 800px at 60% 40%, hsl(var(--accent) / 0.06) 0%, transparent 50%);
+    filter: blur(150px);
     animation: aquatic-float 35s ease-in-out infinite;
-    mix-blend-mode: screen;
+    mix-blend-mode: soft-light;
   }
   
   @keyframes float-ethereal {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-ai-recruiter.jpg";
+import heroImage from "@/assets/hero-aquatic-ai.jpg";
 import { useCounter } from "@/hooks/use-counter";
 import { ContactFormDialog } from "@/components/ContactFormDialog";
 
@@ -17,10 +17,10 @@ export const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] animate-float-slow opacity-60" />
-        <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-secondary/4 rounded-full blur-[140px] animate-float-slow opacity-50" style={{ animationDelay: "3s" }} />
-        <div className="absolute top-1/2 left-1/4 w-[350px] h-[350px] bg-accent/3 rounded-full blur-[100px] animate-float-slow opacity-40" style={{ animationDelay: "1.5s" }} />
-        <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[110px] animate-float-slow opacity-50" style={{ animationDelay: "4.5s" }} />
+        <div className="absolute top-20 left-10 w-[700px] h-[700px] bg-primary/6 rounded-full blur-[180px] animate-float-slow opacity-70" />
+        <div className="absolute bottom-20 right-10 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[200px] animate-float-slow opacity-60" style={{ animationDelay: "3s" }} />
+        <div className="absolute top-1/2 left-1/3 w-[600px] h-[600px] bg-secondary/4 rounded-full blur-[160px] animate-float-slow opacity-50" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute bottom-1/3 right-1/4 w-[650px] h-[650px] bg-primary/5 rounded-full blur-[170px] animate-float-slow opacity-55" style={{ animationDelay: "4.5s" }} />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
