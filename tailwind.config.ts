@@ -142,6 +142,10 @@ export default {
         "pulse-glow": "pulse-glow 4s ease-in-out infinite",
         "slide-in-left": "slide-in-left 1s cubic-bezier(0.16, 1, 0.3, 1)",
         "slide-in-right": "slide-in-right 1s cubic-bezier(0.16, 1, 0.3, 1)",
+        "aquatic-drift": "aquatic-drift 40s ease-in-out infinite",
+        "wave-slow": "wave-slow 25s ease-in-out infinite",
+        "wave-medium": "wave-medium 18s ease-in-out infinite",
+        "wave-fast": "wave-fast 12s ease-in-out infinite",
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
