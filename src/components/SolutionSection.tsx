@@ -29,7 +29,13 @@ export const SolutionSection = () => {
   ];
 
   return (
-    <section className="py-32 relative overflow-hidden bg-muted/20">
+    <section className="py-40 relative overflow-hidden">
+      {/* Floating ethereal background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[150px] animate-float-slow" />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-[120px] animate-float" style={{ animationDelay: '2s' }} />
+      </div>
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1]">
@@ -40,24 +46,24 @@ export const SolutionSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 max-w-6xl mx-auto">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <div 
                 key={index} 
-                className="relative opacity-0 animate-fade-in" 
+                className="relative opacity-0 animate-fade-in group" 
                 style={{ 
                   animationDelay: `${index * 0.15}s`,
                   animationFillMode: 'forwards'
                 }}
               >
-                <div className="text-7xl font-bold text-accent mb-4">{step.number}</div>
-                <div className="mb-6">
-                  <Icon className="w-8 h-8 text-primary" />
+                <div className="text-8xl font-bold text-accent mb-6 opacity-30 group-hover:opacity-50 transition-all duration-700">{step.number}</div>
+                <div className="mb-8 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-700">
+                  <Icon className="w-10 h-10 text-primary/70" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                <h3 className="text-2xl font-bold mb-5 transition-all duration-500 group-hover:text-primary">{step.title}</h3>
+                <p className="text-muted-foreground/80 leading-relaxed text-base">{step.description}</p>
               </div>
             );
           })}

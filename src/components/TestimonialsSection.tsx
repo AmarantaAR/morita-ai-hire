@@ -23,8 +23,14 @@ export const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-40 bg-muted/20 relative overflow-hidden">
+      {/* Floating background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/5 rounded-full blur-[100px] animate-float-slow" />
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/5 rounded-full blur-[120px] animate-float" style={{ animationDelay: '4s' }} />
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight">
             Trusted by Forward-Thinking{" "}
@@ -35,21 +41,21 @@ export const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-10">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-card/80 backdrop-blur-sm p-10 rounded-2xl border border-primary/20 hover:border-primary/50 hover:shadow-[var(--shadow-glow)] hover:-translate-y-2 transition-all animate-slide-up group"
+              className="bg-card/60 backdrop-blur-md p-12 rounded-3xl border border-primary/10 hover:border-primary/30 hover:bg-card/70 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-3 transition-all duration-700 animate-slide-up group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <Quote className="w-12 h-12 text-primary/30 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all" />
-              <p className="text-muted-foreground mb-8 leading-relaxed text-lg italic">
+              <Quote className="w-14 h-14 text-primary/20 mb-8 group-hover:scale-110 group-hover:rotate-3 transition-all duration-700" />
+              <p className="text-muted-foreground/80 mb-10 leading-relaxed text-lg italic">
                 "{testimonial.quote}"
               </p>
-              <div className="border-t border-primary/20 pt-6">
+              <div className="border-t border-primary/10 pt-8">
                 <div className="font-bold text-lg">{testimonial.author}</div>
-                <div className="text-sm text-muted-foreground mt-1">{testimonial.role}</div>
-                <div className="text-sm text-primary font-semibold mt-1">{testimonial.company}</div>
+                <div className="text-sm text-muted-foreground/70 mt-2">{testimonial.role}</div>
+                <div className="text-sm text-primary/80 font-semibold mt-1">{testimonial.company}</div>
               </div>
             </div>
           ))}
