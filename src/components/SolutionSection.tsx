@@ -52,7 +52,7 @@ export const SolutionSection = () => {
                   animationFillMode: 'forwards'
                 }}
               >
-                <div className="text-7xl font-bold text-foreground/5 mb-4">{step.number}</div>
+                <div className="text-7xl font-bold text-accent/20 mb-4">{step.number}</div>
                 <div className="mb-6">
                   <Icon className="w-8 h-8 text-primary" />
                 </div>
