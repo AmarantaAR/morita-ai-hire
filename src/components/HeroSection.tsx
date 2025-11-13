@@ -18,41 +18,47 @@ export const HeroSection = () => {
       {/* Animated aquatic background image */}
       <div className="absolute inset-0 overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-30 animate-aquatic-drift"
+          className="absolute inset-0 opacity-50 animate-aquatic-drift"
           style={{
             backgroundImage: `url(${heroImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            filter: 'blur(2px)',
+            filter: 'blur(1px)',
           }}
         />
         
-        {/* Animated water overlay effects */}
-        <div className="absolute inset-0 animate-wave-slow opacity-40" 
+        {/* Animated water overlay effects with more intensity */}
+        <div className="absolute inset-0 animate-wave-slow opacity-60" 
           style={{
-            background: 'radial-gradient(ellipse 150% 100% at 50% 50%, hsl(var(--primary) / 0.15) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse 150% 100% at 50% 50%, hsl(var(--primary) / 0.35) 0%, transparent 70%)',
             filter: 'blur(60px)',
           }}
         />
-        <div className="absolute inset-0 animate-wave-medium opacity-30" 
+        <div className="absolute inset-0 animate-wave-medium opacity-50" 
           style={{
-            background: 'radial-gradient(circle 120% at 30% 40%, hsl(var(--accent) / 0.2) 0%, transparent 60%)',
+            background: 'radial-gradient(circle 120% at 30% 40%, hsl(var(--accent) / 0.4) 0%, transparent 60%)',
             filter: 'blur(80px)',
             animationDelay: '2s'
           }}
         />
-        <div className="absolute inset-0 animate-wave-fast opacity-25" 
+        <div className="absolute inset-0 animate-wave-fast opacity-45" 
           style={{
-            background: 'radial-gradient(ellipse 100% 140% at 70% 60%, hsl(270 85% 75% / 0.15) 0%, transparent 65%)',
+            background: 'radial-gradient(ellipse 100% 140% at 70% 60%, hsl(270 85% 75% / 0.3) 0%, transparent 65%)',
             filter: 'blur(100px)',
             animationDelay: '4s'
           }}
         />
         
-        {/* Floating particles */}
-        <div className="absolute top-20 left-10 w-[700px] h-[700px] bg-primary/6 rounded-full blur-[180px] animate-float-slow opacity-70" />
-        <div className="absolute bottom-20 right-10 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[200px] animate-float-slow opacity-60" style={{ animationDelay: "3s" }} />
-        <div className="absolute top-1/2 left-1/3 w-[600px] h-[600px] bg-secondary/4 rounded-full blur-[160px] animate-float-slow opacity-50" style={{ animationDelay: "1.5s" }} />
+        {/* Floating particles and bubbles */}
+        <div className="absolute top-20 left-10 w-[700px] h-[700px] bg-primary/12 rounded-full blur-[180px] animate-float-slow opacity-80" />
+        <div className="absolute bottom-20 right-10 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[200px] animate-float-slow opacity-70" style={{ animationDelay: "3s" }} />
+        <div className="absolute top-1/2 left-1/3 w-[600px] h-[600px] bg-secondary/8 rounded-full blur-[160px] animate-float-slow opacity-60" style={{ animationDelay: "1.5s" }} />
+        
+        {/* Smaller floating bubbles */}
+        <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-accent/20 rounded-full blur-2xl animate-float" />
+        <div className="absolute bottom-1/3 left-1/5 w-24 h-24 bg-primary/25 rounded-full blur-xl animate-float-slow" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-2/3 right-1/3 w-40 h-40 bg-accent/15 rounded-full blur-3xl animate-float" style={{ animationDelay: "2.5s" }} />
+        <div className="absolute top-1/3 left-2/3 w-28 h-28 bg-primary/20 rounded-full blur-2xl animate-float-slow" style={{ animationDelay: "0.5s" }} />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
