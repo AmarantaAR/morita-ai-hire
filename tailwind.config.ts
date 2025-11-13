@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         'clash': ['"Clash Display"', 'sans-serif'],
-        'orbitron': ['Orbitron', 'sans-serif'],
+        'space': ['Space Grotesk', 'sans-serif'],
         'sans': ['Inter', 'sans-serif'],
       },
       colors: {
