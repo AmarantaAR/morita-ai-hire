@@ -14,8 +14,8 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Brand */}
           <div className="text-center md:text-left">
-            <div className="flex items-center gap-1 mb-3 justify-center md:justify-start">
-              <span className="text-xl font-clash font-bold lowercase tracking-wide text-foreground">
+            <div className="flex items-center gap-1 mb-3 justify-center md:justify-start group cursor-pointer">
+              <span className="text-xl font-clash font-bold lowercase tracking-wide text-foreground transition-colors duration-300 group-hover:text-primary">
                 mor
                 <span className="relative inline-block">
                   i
@@ -23,7 +23,7 @@ export const Footer = () => {
                 </span>
                 ta
               </span>
-              <span className="text-base font-sans text-muted-foreground ml-0.5">.hr</span>
+              <span className="text-base font-sans text-muted-foreground ml-0.5 transition-colors duration-300 group-hover:text-primary">.hr</span>
             </div>
             <p className="text-sm text-muted-foreground">
               AI-powered recruiting. Smarter, faster, fairer.
@@ -34,19 +34,19 @@ export const Footer = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsFormOpen(true)}
-              className="w-10 h-10 bg-muted/50 rounded-xl flex items-center justify-center hover:bg-muted transition-all duration-300 cursor-pointer"
+              className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center hover:bg-primary hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)] transition-all duration-300 cursor-pointer group"
               aria-label="Contact us via email"
             >
-              <Mail className="w-4 h-4 text-foreground" />
+              <Mail className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
             </button>
             <a
               href="https://www.linkedin.com/company/morita-hr"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-muted/50 rounded-xl flex items-center justify-center hover:bg-muted transition-all duration-300"
+              className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center hover:bg-primary hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)] transition-all duration-300 group"
               aria-label="Visit our LinkedIn page"
             >
-              <Linkedin className="w-4 h-4 text-foreground" />
+              <Linkedin className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
             </a>
           </div>
         </div>
