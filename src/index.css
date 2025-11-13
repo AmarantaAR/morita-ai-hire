@@ -131,8 +131,9 @@ All colors MUST be HSL.
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Orbitron', sans-serif !important;
-    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
   
   body::before {
@@ -153,6 +154,25 @@ All colors MUST be HSL.
     animation: float-ethereal 25s ease-in-out infinite;
   }
   
+  body::after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 1;
+    background: 
+      radial-gradient(circle 800px at 20% 30%, hsl(var(--accent) / 0.08) 0%, transparent 50%),
+      radial-gradient(circle 600px at 80% 70%, hsl(var(--primary) / 0.06) 0%, transparent 50%),
+      radial-gradient(circle 700px at 50% 50%, hsl(var(--accent) / 0.05) 0%, transparent 50%);
+    filter: blur(120px);
+    animation: aquatic-float 35s ease-in-out infinite;
+    mix-blend-mode: screen;
+  }
+  
   @keyframes float-ethereal {
     0%, 100% { 
       transform: translate(0, 0) scale(1);
@@ -165,6 +185,25 @@ All colors MUST be HSL.
     66% { 
       transform: translate(-20px, 30px) scale(0.95);
       opacity: 0.9;
+    }
+  }
+  
+  @keyframes aquatic-float {
+    0%, 100% { 
+      transform: translate(0, 0) scale(1) rotate(0deg);
+      opacity: 0.4;
+    }
+    25% { 
+      transform: translate(50px, -80px) scale(1.15) rotate(5deg);
+      opacity: 0.5;
+    }
+    50% { 
+      transform: translate(-30px, 60px) scale(0.9) rotate(-3deg);
+      opacity: 0.35;
+    }
+    75% { 
+      transform: translate(80px, 40px) scale(1.05) rotate(4deg);
+      opacity: 0.45;
     }
   }
   
