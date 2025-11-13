@@ -7,52 +7,34 @@ export const CTASection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-primary opacity-5" />
-      
+    <section className="py-32 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary mb-5">
-              <Rocket className="w-3.5 h-3.5" />
-              <span className="text-xs font-medium">Join the Revolution</span>
-            </div>
-            
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-[1.1] tracking-tight">
-              Ready to Transform Your Hiring —{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">Today</span>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1]">
+              Ready to hire smarter?
             </h2>
             
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-              Join forward-thinking companies that are revolutionizing their recruitment process with AI-powered intelligence.
+            <p className="text-xl sm:text-2xl text-muted-foreground mb-12 font-light">
+              Join companies transforming their hiring with AI.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="group shadow-[0_0_60px_hsl(var(--primary)_/_0.4)]"
-                onClick={() => setDialogOpen(true)}
-              >
-                Request Demo
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
+            <Button 
+              size="lg"
+              className="group px-8 py-6 text-lg bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl transition-all duration-500"
+              onClick={() => setDialogOpen(true)}
+            >
+              Start Hiring
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
 
             <ContactFormDialog 
               open={dialogOpen} 
               onOpenChange={setDialogOpen}
             />
-
-            {/* Trust indicators */}
-            <div className="flex flex-wrap items-center justify-center gap-5 text-xs text-muted-foreground">
-            </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-primary" />
     </section>
   );
 };

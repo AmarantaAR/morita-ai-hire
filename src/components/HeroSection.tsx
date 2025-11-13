@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-ai-recruiter.jpg";
 import { useCounter } from "@/hooks/use-counter";
 import { ContactFormDialog } from "@/components/ContactFormDialog";
@@ -27,38 +27,25 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className="text-center lg:text-left animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 backdrop-blur-sm text-primary mb-8 transition-all duration-700 hover:bg-primary/8 border border-primary/10">
-              <Sparkles className="w-4 h-4 text-primary opacity-70" />
-              <span className="text-sm font-medium">The Future of HR is Here</span>
-            </div>
-            
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-[1.15] tracking-tight">
-              Meet the AI Recruiter That{" "}
-              <span className="bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">Never Sleeps</span>
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-[1.05] tracking-tight">
+              Hire smarter.
+              <br />
+              <span className="bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">Not harder.</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Morita doesn't just analyze — she understands. Our AI conducts intelligent interviews, 
-              analyzes candidates with precision, and finds the perfect match automatically.
+            <p className="text-xl sm:text-2xl text-foreground/70 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+              AI-powered recruiting that interviews, analyzes, and matches candidates automatically. While you sleep.
             </p>
             
-            <p className="text-sm text-muted-foreground/80 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Where technology meets intuition.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <div className="flex flex-col items-center sm:items-start">
-                <Button 
-                  variant="hero" 
-                  size="xl" 
-                  className="group w-full sm:w-auto"
-                  onClick={() => setDialogOpen(true)}
-                >
-                  Request Early Access
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <span className="text-xs text-muted-foreground mt-2">No spam, just smarter hiring</span>
-              </div>
+            <div className="flex gap-4 justify-center lg:justify-start mb-12">
+              <Button 
+                size="lg"
+                className="group px-8 py-6 text-lg bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl transition-all duration-500"
+                onClick={() => setDialogOpen(true)}
+              >
+                Start Hiring
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </div>
 
             <ContactFormDialog 
@@ -66,44 +53,31 @@ export const HeroSection = () => {
               onOpenChange={setDialogOpen}
             />
             
-            <div className="mt-12 flex items-center gap-8 justify-center lg:justify-start text-sm">
-              <div ref={costReduction.ref}>
-                <div className="text-2xl font-semibold text-primary">{costReduction.count}</div>
-                <div className="text-muted-foreground">Cost Reduction</div>
+            {/* Stats row */}
+            <div className="grid grid-cols-3 gap-8 max-w-xl">
+              <div ref={costReduction.ref} className="text-center lg:text-left">
+                <div className="text-4xl sm:text-5xl font-bold text-foreground mb-1">{costReduction.count}</div>
+                <div className="text-sm text-muted-foreground">Cost reduction</div>
               </div>
-              <div className="w-px h-12 bg-border" />
-              <div ref={fasterHiring.ref}>
-                <div className="text-2xl font-semibold text-primary">{fasterHiring.count}</div>
-                <div className="text-muted-foreground">Faster Hiring</div>
+              <div ref={fasterHiring.ref} className="text-center lg:text-left">
+                <div className="text-4xl sm:text-5xl font-bold text-foreground mb-1">{fasterHiring.count}</div>
+                <div className="text-sm text-muted-foreground">Faster hiring</div>
               </div>
-              <div className="w-px h-12 bg-border" />
-              <div ref={lessBias.ref}>
-                <div className="text-2xl font-semibold text-primary">{lessBias.count}</div>
-                <div className="text-muted-foreground">Less Bias</div>
+              <div ref={lessBias.ref} className="text-center lg:text-left">
+                <div className="text-4xl sm:text-5xl font-bold text-foreground mb-1">{lessBias.count}</div>
+                <div className="text-sm text-muted-foreground">Less bias</div>
               </div>
             </div>
           </div>
 
           {/* Right image */}
-          <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-glow)] transition-all duration-1000 hover:shadow-[var(--shadow-glow)] border border-primary/10 backdrop-blur-sm">
+          <div className="relative animate-fade-in lg:block hidden" style={{ animationDelay: "0.3s" }}>
+            <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-card)] transition-all duration-1000 border border-border/20">
               <img 
                 src={heroImage} 
                 alt="AI Recruiter Dashboard showing candidate analysis and interview interface"
-                className="w-full h-auto opacity-95"
+                className="w-full h-auto"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
-            </div>
-            
-            {/* Floating stats cards with glass-morphism */}
-            <div ref={activeInterviews.ref} className="absolute -bottom-6 -left-6 bg-card/60 backdrop-blur-2xl p-5 rounded-2xl shadow-[var(--shadow-card)] border border-primary/20 animate-float hover:bg-card/70 hover:border-primary/30 transition-all duration-700" style={{ animationDelay: "0.5s" }}>
-              <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1 opacity-70">Active Interviews</div>
-              <div className="text-3xl font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">{activeInterviews.count}</div>
-            </div>
-            
-            <div ref={matchAccuracy.ref} className="absolute -top-6 -right-6 bg-card/60 backdrop-blur-2xl p-5 rounded-2xl shadow-[var(--shadow-card)] border border-accent/20 animate-float hover:bg-card/70 hover:border-accent/30 transition-all duration-700" style={{ animationDelay: "1s" }}>
-              <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1 opacity-70">Match Accuracy</div>
-              <div className="text-3xl font-semibold text-accent/90">{matchAccuracy.count}</div>
             </div>
           </div>
         </div>
