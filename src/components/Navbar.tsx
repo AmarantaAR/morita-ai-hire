@@ -39,8 +39,8 @@ export const Navbar = () => {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-            <Button variant="default" size="sm" onClick={() => setDialogOpen(true)} className="rounded-xl">
-              Start Hiring
+            <Button variant="default" size="sm" onClick={() => setDialogOpen(true)} className="rounded-xl shadow-lg hover:shadow-xl transition-all">
+              Get Early Access
             </Button>
           </div>
 
@@ -68,7 +68,7 @@ export const Navbar = () => {
               </a>
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
                 <Button variant="default" size="sm" onClick={() => setDialogOpen(true)} className="rounded-xl">
-                  Start Hiring
+                  Get Early Access
                 </Button>
               </div>
             </div>
