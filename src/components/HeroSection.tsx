@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-aquatic-ai.jpg";
 import { useCounter } from "@/hooks/use-counter";
 import { ContactFormDialog } from "@/components/ContactFormDialog";
 
@@ -15,46 +14,41 @@ export const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-20">
-      {/* Background image with aquatic overlay */}
+      {/* Aurora effect background */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="absolute inset-0 opacity-40 dark:opacity-30"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
+        {/* Base gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#E8F5F7] via-[#F0F4FF] to-[#F5F0FF] dark:from-[#0a0a0f] dark:via-[#0f0a15] dark:to-[#150a1f]" />
         
-        {/* Translucent aquatic veils with movement */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#E8F5F7]/95 via-[#F0F4FF]/90 to-[#F5F0FF]/95 dark:from-background/95 dark:via-background/90 dark:to-background/95" />
+        {/* Aurora layers */}
+        <div className="absolute inset-0">
+          <div 
+            className="absolute top-0 left-1/4 w-96 h-96 opacity-30 dark:opacity-20 blur-[120px] animate-aurora-1"
+            style={{
+              background: 'radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%)',
+            }}
+          />
+          <div 
+            className="absolute top-1/3 right-1/4 w-[500px] h-[500px] opacity-25 dark:opacity-15 blur-[130px] animate-aurora-2"
+            style={{
+              background: 'radial-gradient(circle, hsl(var(--accent)) 0%, transparent 70%)',
+            }}
+          />
+          <div 
+            className="absolute bottom-1/4 left-1/3 w-[450px] h-[450px] opacity-20 dark:opacity-10 blur-[140px] animate-aurora-3"
+            style={{
+              background: 'radial-gradient(circle, hsl(var(--secondary)) 0%, transparent 70%)',
+            }}
+          />
+          <div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-15 dark:opacity-10 blur-[150px] animate-aurora-4"
+            style={{
+              background: 'radial-gradient(ellipse, hsl(270 85% 75%) 0%, transparent 70%)',
+            }}
+          />
+        </div>
         
-        {/* Animated water overlay effects */}
-        <div className="absolute inset-0 animate-wave-slow opacity-40" 
-          style={{
-            background: 'radial-gradient(ellipse 150% 100% at 50% 50%, hsl(var(--primary) / 0.3) 0%, transparent 70%)',
-            filter: 'blur(60px)',
-          }}
-        />
-        <div className="absolute inset-0 animate-wave-medium opacity-30" 
-          style={{
-            background: 'radial-gradient(circle 120% at 30% 40%, hsl(var(--accent) / 0.35) 0%, transparent 60%)',
-            filter: 'blur(80px)',
-            animationDelay: '2s'
-          }}
-        />
-        <div className="absolute inset-0 animate-wave-fast opacity-25" 
-          style={{
-            background: 'radial-gradient(ellipse 100% 140% at 70% 60%, hsl(270 85% 75% / 0.25) 0%, transparent 65%)',
-            filter: 'blur(100px)',
-            animationDelay: '4s'
-          }}
-        />
-        
-        {/* Floating glass orbs */}
-        <div className="absolute top-10 right-10 w-[300px] h-[300px] rounded-full bg-gradient-to-br from-primary/15 to-accent/10 backdrop-blur-3xl opacity-50 animate-float-slow border border-white/20" />
-        <div className="absolute bottom-20 left-20 w-[200px] h-[200px] rounded-full bg-gradient-to-br from-accent/15 to-primary/10 backdrop-blur-3xl opacity-40 animate-float" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 right-1/3 w-[150px] h-[150px] rounded-full bg-gradient-to-br from-secondary/15 to-accent/10 backdrop-blur-3xl opacity-30 animate-float-slow" style={{ animationDelay: "1s" }} />
+        {/* Subtle overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-background/10" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -80,11 +74,11 @@ export const HeroSection = () => {
             <div className="mb-10">
               <Button 
                 size="lg"
-                className="group px-10 py-6 text-base bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                className="group px-14 py-8 text-xl font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-3xl shadow-2xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
                 onClick={() => setDialogOpen(true)}
               >
                 Start Hiring Faster
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
 
@@ -110,17 +104,36 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right image card */}
+          {/* Right card with glass effect */}
           <div className="relative animate-fade-in lg:block hidden" style={{ animationDelay: "0.2s" }}>
-            <div className="relative rounded-3xl overflow-hidden backdrop-blur-xl bg-white/40 dark:bg-background/40 border border-white/50 dark:border-border/30 shadow-2xl">
-              <img 
-                src={heroImage} 
-                alt="AI-powered recruiting interface" 
-                className="w-full h-auto opacity-80"
-              />
+            <div className="relative rounded-3xl overflow-hidden backdrop-blur-xl bg-white/40 dark:bg-background/40 border border-white/50 dark:border-border/30 shadow-2xl p-12">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent" />
+                  <div>
+                    <div className="text-sm font-semibold text-foreground">AI Interview Active</div>
+                    <div className="text-xs text-muted-foreground">Analyzing candidate response...</div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-2 bg-primary/20 rounded-full overflow-hidden">
+                    <div className="h-full w-3/4 bg-gradient-to-r from-primary to-accent animate-pulse" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="p-3 rounded-xl bg-white/60 dark:bg-background/60">
+                      <div className="text-xs text-muted-foreground mb-1">Communication</div>
+                      <div className="text-lg font-bold text-primary">94%</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/60 dark:bg-background/60">
+                      <div className="text-xs text-muted-foreground mb-1">Technical Fit</div>
+                      <div className="text-lg font-bold text-accent">88%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            {/* Floating mini orbs around image */}
+            {/* Floating mini orbs around card */}
             <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-gradient-to-br from-accent/30 to-primary/20 backdrop-blur-xl border border-white/30 animate-float" />
             <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 backdrop-blur-xl border border-white/30 animate-float-slow" />
           </div>

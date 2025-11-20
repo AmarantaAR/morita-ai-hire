@@ -127,6 +127,58 @@ export default {
           "0%": { opacity: "0", transform: "translateX(10px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        "aurora-1": {
+          "0%, 100%": { 
+            transform: "translate(0, 0) scale(1)",
+            opacity: "0.3"
+          },
+          "33%": { 
+            transform: "translate(30px, -30px) scale(1.1)",
+            opacity: "0.4"
+          },
+          "66%": { 
+            transform: "translate(-20px, 20px) scale(0.9)",
+            opacity: "0.35"
+          },
+        },
+        "aurora-2": {
+          "0%, 100%": { 
+            transform: "translate(0, 0) scale(1)",
+            opacity: "0.25"
+          },
+          "33%": { 
+            transform: "translate(-40px, 30px) scale(1.15)",
+            opacity: "0.3"
+          },
+          "66%": { 
+            transform: "translate(30px, -25px) scale(0.95)",
+            opacity: "0.28"
+          },
+        },
+        "aurora-3": {
+          "0%, 100%": { 
+            transform: "translate(0, 0) scale(1) rotate(0deg)",
+            opacity: "0.2"
+          },
+          "33%": { 
+            transform: "translate(25px, 35px) scale(1.1) rotate(5deg)",
+            opacity: "0.25"
+          },
+          "66%": { 
+            transform: "translate(-30px, -20px) scale(0.9) rotate(-5deg)",
+            opacity: "0.22"
+          },
+        },
+        "aurora-4": {
+          "0%, 100%": { 
+            transform: "translate(-50%, -50%) scale(1)",
+            opacity: "0.15"
+          },
+          "50%": { 
+            transform: "translate(-50%, -50%) scale(1.2)",
+            opacity: "0.2"
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -146,6 +198,10 @@ export default {
         "wave-slow": "wave-slow 25s ease-in-out infinite",
         "wave-medium": "wave-medium 18s ease-in-out infinite",
         "wave-fast": "wave-fast 12s ease-in-out infinite",
+        "aurora-1": "aurora-1 20s ease-in-out infinite",
+        "aurora-2": "aurora-2 25s ease-in-out infinite",
+        "aurora-3": "aurora-3 30s ease-in-out infinite",
+        "aurora-4": "aurora-4 35s ease-in-out infinite",
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
