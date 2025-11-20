@@ -146,10 +146,11 @@ export const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[550px] backdrop-blur-2xl bg-gradient-to-br from-white/90 via-white/80 to-white/90 dark:from-background/95 dark:via-background/90 dark:to-background/95 border border-white/60 dark:border-primary/30 shadow-2xl">
         <DialogHeader className="space-y-4 pb-2">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent mx-auto">
-            {step === 1 && <User className="w-8 h-8 text-white" />}
-            {step === 2 && <Briefcase className="w-8 h-8 text-white" />}
-            {step === 3 && <MessageSquare className="w-8 h-8 text-white" />}
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 mx-auto backdrop-blur-sm border border-primary/20">
+            <div className="relative">
+              <div className="w-6 h-6 bg-accent rounded-full animate-pulse shadow-[0_0_20px_hsl(var(--accent))]" />
+              <div className="absolute inset-0 w-6 h-6 bg-accent/30 rounded-full animate-ping" />
+            </div>
           </div>
           <DialogTitle className="text-3xl font-bold text-center">
             <span className="bg-gradient-to-r from-primary via-primary/90 to-accent bg-clip-text text-transparent">
