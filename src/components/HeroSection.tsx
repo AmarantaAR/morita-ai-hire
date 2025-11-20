@@ -110,8 +110,20 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right side - empty space for balance */}
-          <div className="hidden lg:block"></div>
+          {/* Right image card */}
+          <div className="relative animate-fade-in lg:block hidden" style={{ animationDelay: "0.2s" }}>
+            <div className="relative rounded-3xl overflow-hidden backdrop-blur-xl bg-white/40 dark:bg-background/40 border border-white/50 dark:border-border/30 shadow-2xl">
+              <img 
+                src={heroImage} 
+                alt="AI-powered recruiting interface" 
+                className="w-full h-auto opacity-80"
+              />
+            </div>
+            
+            {/* Floating mini orbs around image */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-gradient-to-br from-accent/30 to-primary/20 backdrop-blur-xl border border-white/30 animate-float" />
+            <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 backdrop-blur-xl border border-white/30 animate-float-slow" />
+          </div>
         </div>
       </div>
     </section>
