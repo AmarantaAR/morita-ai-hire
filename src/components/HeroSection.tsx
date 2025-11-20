@@ -14,12 +14,47 @@ export const HeroSection = () => {
   const matchAccuracy = useCounter({ end: 94.8, isPercentage: true, duration: 3000 });
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#E8F5F7] via-[#F0F4FF] to-[#F5F0FF] dark:from-background dark:via-background dark:to-background pt-24 pb-20">
-      {/* Floating glass orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 right-10 w-[300px] h-[300px] rounded-full bg-gradient-to-br from-primary/20 to-accent/10 backdrop-blur-3xl opacity-60 animate-float-slow border border-white/20" />
-        <div className="absolute bottom-20 left-20 w-[200px] h-[200px] rounded-full bg-gradient-to-br from-accent/15 to-primary/10 backdrop-blur-3xl opacity-50 animate-float" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 right-1/3 w-[150px] h-[150px] rounded-full bg-gradient-to-br from-secondary/20 to-accent/15 backdrop-blur-3xl opacity-40 animate-float-slow" style={{ animationDelay: "1s" }} />
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-20">
+      {/* Background image with aquatic overlay */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 opacity-40 dark:opacity-30"
+          style={{
+            backgroundImage: `url(${heroImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        
+        {/* Translucent aquatic veils with movement */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#E8F5F7]/95 via-[#F0F4FF]/90 to-[#F5F0FF]/95 dark:from-background/95 dark:via-background/90 dark:to-background/95" />
+        
+        {/* Animated water overlay effects */}
+        <div className="absolute inset-0 animate-wave-slow opacity-40" 
+          style={{
+            background: 'radial-gradient(ellipse 150% 100% at 50% 50%, hsl(var(--primary) / 0.3) 0%, transparent 70%)',
+            filter: 'blur(60px)',
+          }}
+        />
+        <div className="absolute inset-0 animate-wave-medium opacity-30" 
+          style={{
+            background: 'radial-gradient(circle 120% at 30% 40%, hsl(var(--accent) / 0.35) 0%, transparent 60%)',
+            filter: 'blur(80px)',
+            animationDelay: '2s'
+          }}
+        />
+        <div className="absolute inset-0 animate-wave-fast opacity-25" 
+          style={{
+            background: 'radial-gradient(ellipse 100% 140% at 70% 60%, hsl(270 85% 75% / 0.25) 0%, transparent 65%)',
+            filter: 'blur(100px)',
+            animationDelay: '4s'
+          }}
+        />
+        
+        {/* Floating glass orbs */}
+        <div className="absolute top-10 right-10 w-[300px] h-[300px] rounded-full bg-gradient-to-br from-primary/15 to-accent/10 backdrop-blur-3xl opacity-50 animate-float-slow border border-white/20" />
+        <div className="absolute bottom-20 left-20 w-[200px] h-[200px] rounded-full bg-gradient-to-br from-accent/15 to-primary/10 backdrop-blur-3xl opacity-40 animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/2 right-1/3 w-[150px] h-[150px] rounded-full bg-gradient-to-br from-secondary/15 to-accent/10 backdrop-blur-3xl opacity-30 animate-float-slow" style={{ animationDelay: "1s" }} />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -60,59 +95,23 @@ export const HeroSection = () => {
             
             {/* Stats row */}
             <div className="grid grid-cols-3 gap-4">
-              <div ref={costReduction.ref} className="backdrop-blur-xl bg-white/40 dark:bg-background/40 rounded-2xl p-4 border border-white/30 dark:border-border/20">
+              <div ref={costReduction.ref} className="backdrop-blur-xl bg-white/50 dark:bg-background/50 rounded-2xl p-4 border border-white/40 dark:border-border/30">
                 <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">{costReduction.count}</div>
                 <div className="text-xs text-foreground/70 font-medium">Lower Costs</div>
               </div>
-              <div ref={fasterHiring.ref} className="backdrop-blur-xl bg-white/40 dark:bg-background/40 rounded-2xl p-4 border border-white/30 dark:border-border/20">
+              <div ref={fasterHiring.ref} className="backdrop-blur-xl bg-white/50 dark:bg-background/50 rounded-2xl p-4 border border-white/40 dark:border-border/30">
                 <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">{fasterHiring.count}</div>
                 <div className="text-xs text-foreground/70 font-medium">Faster</div>
               </div>
-              <div ref={lessBias.ref} className="backdrop-blur-xl bg-white/40 dark:bg-background/40 rounded-2xl p-4 border border-white/30 dark:border-border/20">
+              <div ref={lessBias.ref} className="backdrop-blur-xl bg-white/50 dark:bg-background/50 rounded-2xl p-4 border border-white/40 dark:border-border/30">
                 <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">{lessBias.count}</div>
                 <div className="text-xs text-foreground/70 font-medium">Less Bias</div>
               </div>
             </div>
           </div>
 
-          {/* Right image card with aquatic effect */}
-          <div className="relative animate-fade-in lg:block hidden" style={{ animationDelay: "0.2s" }}>
-            <div className="relative rounded-3xl overflow-hidden backdrop-blur-xl bg-white/30 dark:bg-background/30 border border-white/40 dark:border-border/20 shadow-2xl">
-              {/* Aquatic overlay effect */}
-              <div className="absolute inset-0 z-10">
-                <div className="absolute inset-0 animate-wave-slow opacity-30" 
-                  style={{
-                    background: 'radial-gradient(ellipse 150% 100% at 50% 50%, hsl(var(--primary) / 0.25) 0%, transparent 70%)',
-                    filter: 'blur(60px)',
-                  }}
-                />
-                <div className="absolute inset-0 animate-wave-medium opacity-25" 
-                  style={{
-                    background: 'radial-gradient(circle 120% at 30% 40%, hsl(var(--accent) / 0.3) 0%, transparent 60%)',
-                    filter: 'blur(80px)',
-                    animationDelay: '2s'
-                  }}
-                />
-                <div className="absolute inset-0 animate-wave-fast opacity-20" 
-                  style={{
-                    background: 'radial-gradient(ellipse 100% 140% at 70% 60%, hsl(270 85% 75% / 0.2) 0%, transparent 65%)',
-                    filter: 'blur(100px)',
-                    animationDelay: '4s'
-                  }}
-                />
-              </div>
-              
-              <img 
-                src={heroImage} 
-                alt="AI-powered recruiting interface" 
-                className="w-full h-auto relative z-0"
-              />
-            </div>
-            
-            {/* Floating mini orbs around image */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-gradient-to-br from-accent/30 to-primary/20 backdrop-blur-xl border border-white/30 animate-float" />
-            <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 backdrop-blur-xl border border-white/30 animate-float-slow" />
-          </div>
+          {/* Right side - empty space for balance */}
+          <div className="hidden lg:block"></div>
         </div>
       </div>
     </section>
