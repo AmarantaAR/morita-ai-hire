@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowRight, ArrowLeft, Check } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, User, Mail, Briefcase, Building2, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
@@ -144,85 +144,136 @@ export const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px] backdrop-blur-xl bg-card/95 border-primary/20">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            {step === 1 && "Let's Get Started"}
-            {step === 2 && "Tell Us About You"}
-            {step === 3 && "Almost Done!"}
+      <DialogContent className="sm:max-w-[550px] backdrop-blur-2xl bg-gradient-to-br from-white/90 via-white/80 to-white/90 dark:from-background/95 dark:via-background/90 dark:to-background/95 border border-white/60 dark:border-primary/30 shadow-2xl">
+        <DialogHeader className="space-y-4 pb-2">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent mx-auto">
+            {step === 1 && <User className="w-8 h-8 text-white" />}
+            {step === 2 && <Briefcase className="w-8 h-8 text-white" />}
+            {step === 3 && <MessageSquare className="w-8 h-8 text-white" />}
+          </div>
+          <DialogTitle className="text-3xl font-bold text-center">
+            <span className="bg-gradient-to-r from-primary via-primary/90 to-accent bg-clip-text text-transparent">
+              {step === 1 && "Let's Get Started"}
+              {step === 2 && "Tell Us About You"}
+              {step === 3 && "Almost Done!"}
+            </span>
           </DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-center text-base">
             {step === 1 && "We're excited to connect with you"}
             {step === 2 && "Help us understand your needs better"}
-            {step === 3 && "Any additional information?"}
+            {step === 3 && "Share any additional thoughts with us"}
           </DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-6 py-4">
+        <div className="space-y-8 py-6">
           {/* Progress indicator */}
-          <div className="flex gap-2">
+          <div className="flex gap-3">
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className={`h-1 flex-1 rounded-full transition-all ${i <= step ? "bg-gradient-primary" : "bg-border"}`}
-              />
+                className={`relative h-2 flex-1 rounded-full transition-all duration-500 overflow-hidden ${
+                  i < step ? "bg-gradient-to-r from-primary to-accent" : 
+                  i === step ? "bg-gradient-to-r from-primary/70 to-accent/70" : 
+                  "bg-border/50"
+                }`}
+              >
+                {i === step && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-pulse" />
+                )}
+              </div>
             ))}
           </div>
 
           {/* Step 1 */}
           {step === 1 && (
-            <div className="space-y-4 animate-fade-in">
-              <div className="space-y-2">
-                <Label htmlFor="name">Full Name *</Label>
-                <Input
-                  id="name"
-                  placeholder="John Doe"
-                  value={formData.name}
-                  onChange={(e) => {
-                    handleChange("name", e.target.value);
-                    if (errors.name) setErrors({ ...errors, name: "" });
-                  }}
-                  className={errors.name ? "border-destructive" : ""}
-                />
-                {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
+            <div className="space-y-6 animate-fade-in">
+              <div className="space-y-3">
+                <Label htmlFor="name" className="text-sm font-semibold text-foreground/90 flex items-center gap-2">
+                  <User className="w-4 h-4 text-primary" />
+                  Full Name *
+                </Label>
+                <div className="relative">
+                  <Input
+                    id="name"
+                    placeholder="John Doe"
+                    value={formData.name}
+                    onChange={(e) => {
+                      handleChange("name", e.target.value);
+                      if (errors.name) setErrors({ ...errors, name: "" });
+                    }}
+                    className={`h-12 pl-4 backdrop-blur-sm bg-white/50 dark:bg-background/50 border-2 transition-all duration-300 rounded-xl ${
+                      errors.name 
+                        ? "border-destructive focus:border-destructive" 
+                        : "border-border/50 focus:border-primary hover:border-primary/50"
+                    }`}
+                  />
+                </div>
+                {errors.name && (
+                  <p className="text-sm text-destructive flex items-center gap-1 animate-fade-in">
+                    <span className="inline-block w-1 h-1 rounded-full bg-destructive" />
+                    {errors.name}
+                  </p>
+                )}
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email *</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="john@company.com"
-                  value={formData.email}
-                  onChange={(e) => {
-                    handleChange("email", e.target.value);
-                    if (errors.email) setErrors({ ...errors, email: "" });
-                  }}
-                  className={errors.email ? "border-destructive" : ""}
-                />
-                {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
+              <div className="space-y-3">
+                <Label htmlFor="email" className="text-sm font-semibold text-foreground/90 flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-primary" />
+                  Email Address *
+                </Label>
+                <div className="relative">
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="john@company.com"
+                    value={formData.email}
+                    onChange={(e) => {
+                      handleChange("email", e.target.value);
+                      if (errors.email) setErrors({ ...errors, email: "" });
+                    }}
+                    className={`h-12 pl-4 backdrop-blur-sm bg-white/50 dark:bg-background/50 border-2 transition-all duration-300 rounded-xl ${
+                      errors.email 
+                        ? "border-destructive focus:border-destructive" 
+                        : "border-border/50 focus:border-primary hover:border-primary/50"
+                    }`}
+                  />
+                </div>
+                {errors.email && (
+                  <p className="text-sm text-destructive flex items-center gap-1 animate-fade-in">
+                    <span className="inline-block w-1 h-1 rounded-full bg-destructive" />
+                    {errors.email}
+                  </p>
+                )}
               </div>
             </div>
           )}
 
           {/* Step 2 */}
           {step === 2 && (
-            <div className="space-y-4 animate-fade-in">
-              <div className="space-y-2">
-                <Label htmlFor="company">Company</Label>
+            <div className="space-y-6 animate-fade-in">
+              <div className="space-y-3">
+                <Label htmlFor="company" className="text-sm font-semibold text-foreground/90 flex items-center gap-2">
+                  <Building2 className="w-4 h-4 text-primary" />
+                  Company Name
+                </Label>
                 <Input
                   id="company"
                   placeholder="Your Company Inc."
                   value={formData.company}
                   onChange={(e) => handleChange("company", e.target.value)}
+                  className="h-12 pl-4 backdrop-blur-sm bg-white/50 dark:bg-background/50 border-2 border-border/50 focus:border-primary hover:border-primary/50 transition-all duration-300 rounded-xl"
                 />
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="role">Your Role</Label>
+              <div className="space-y-3">
+                <Label htmlFor="role" className="text-sm font-semibold text-foreground/90 flex items-center gap-2">
+                  <Briefcase className="w-4 h-4 text-primary" />
+                  Your Role
+                </Label>
                 <Input
                   id="role"
-                  placeholder="HR Manager, CEO, etc."
+                  placeholder="HR Manager, CEO, Recruiter..."
                   value={formData.role}
                   onChange={(e) => handleChange("role", e.target.value)}
+                  className="h-12 pl-4 backdrop-blur-sm bg-white/50 dark:bg-background/50 border-2 border-border/50 focus:border-primary hover:border-primary/50 transition-all duration-300 rounded-xl"
                 />
               </div>
             </div>
@@ -230,37 +281,64 @@ export const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps
 
           {/* Step 3 */}
           {step === 3 && (
-            <div className="space-y-4 animate-fade-in">
-              <div className="space-y-2">
-                <Label htmlFor="message">Message (Optional)</Label>
+            <div className="space-y-6 animate-fade-in">
+              <div className="space-y-3">
+                <Label htmlFor="message" className="text-sm font-semibold text-foreground/90 flex items-center gap-2">
+                  <MessageSquare className="w-4 h-4 text-primary" />
+                  Additional Message (Optional)
+                </Label>
                 <Textarea
                   id="message"
-                  placeholder="Tell us more about your needs or interests..."
-                  rows={5}
+                  placeholder="Tell us about your hiring needs, team size, or any specific questions..."
+                  rows={6}
                   value={formData.message}
                   onChange={(e) => handleChange("message", e.target.value)}
+                  className="pl-4 pt-3 backdrop-blur-sm bg-white/50 dark:bg-background/50 border-2 border-border/50 focus:border-primary hover:border-primary/50 transition-all duration-300 rounded-xl resize-none"
                 />
+                <p className="text-xs text-muted-foreground">This helps us personalize our response to your needs</p>
               </div>
             </div>
           )}
 
           {/* Navigation */}
-          <div className="flex gap-3 pt-4">
+          <div className="flex gap-4 pt-2">
             {step > 1 && (
-              <Button variant="outline" onClick={handleBack} className="flex-1" disabled={isSubmitting}>
+              <Button 
+                variant="outline" 
+                onClick={handleBack} 
+                className="flex-1 h-12 rounded-xl border-2 hover:bg-muted/50 transition-all duration-300" 
+                disabled={isSubmitting}
+              >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back
               </Button>
             )}
             {step < 3 ? (
-              <Button variant="hero" onClick={handleNext} className="flex-1" disabled={isSubmitting}>
-                Next
-                <ArrowRight className="w-4 h-4 ml-2" />
+              <Button 
+                onClick={handleNext} 
+                className="flex-1 h-12 rounded-xl bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300" 
+                disabled={isSubmitting}
+              >
+                Continue
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             ) : (
-              <Button variant="hero" onClick={handleSubmit} className="flex-1" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Submit"}
-                <Check className="w-4 h-4 ml-2" />
+              <Button 
+                onClick={handleSubmit} 
+                className="flex-1 h-12 rounded-xl bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <span className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    Submit Request
+                    <Check className="w-5 h-5 ml-2" />
+                  </>
+                )}
               </Button>
             )}
           </div>
